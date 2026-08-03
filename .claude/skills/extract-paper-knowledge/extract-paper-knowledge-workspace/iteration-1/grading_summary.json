@@ -1,0 +1,175 @@
+[
+  {
+    "eval_id": 1,
+    "eval_name": "pi0-7-flow-matching-boundary",
+    "runs": {
+      "with_skill": {
+        "summary": {
+          "pass_rate": 1.0,
+          "passed": 4,
+          "failed": 0,
+          "total": 4
+        },
+        "expectations": [
+          {
+            "text": "Flow matching 等通用生成模型方法被放入 02_AI 目录",
+            "passed": true,
+            "evidence": "Found 1 files under 02_AI, e.g. 02_AI/LLM/flow-matching-action-expert.md"
+          },
+          {
+            "text": "VLA 架构、prompt conditioning 等具身概念被放入 04_Embodied-AI/VLA",
+            "passed": true,
+            "evidence": "Found 4 files under 04_Embodied-AI/VLA, e.g. 04_Embodied-AI/VLA/vla-architecture.md"
+          },
+          {
+            "text": "输出中明确忽略实验、结果、附录等专属章节",
+            "passed": true,
+            "evidence": "summary.md contains all keywords: ('忽略', '实验', 'Appendices')"
+          },
+          {
+            "text": "生成处理摘要 summary.md",
+            "passed": true,
+            "evidence": "summary.md exists"
+          }
+        ]
+      },
+      "without_skill": {
+        "summary": {
+          "pass_rate": 0.75,
+          "passed": 3,
+          "failed": 1,
+          "total": 4
+        },
+        "expectations": [
+          {
+            "text": "Flow matching 等通用生成模型方法被放入 01_Fundamentals 或 02_AI 目录",
+            "passed": true,
+            "evidence": "Found 1 files under 01_Fundamentals, e.g. 01_Fundamentals/ML/generative-models/flow-matching.md"
+          },
+          {
+            "text": "VLA 架构等具身概念被放入 04_Embodied-AI/VLA",
+            "passed": true,
+            "evidence": "Found 3 files under 04_Embodied-AI/VLA, e.g. 04_Embodied-AI/VLA/multimodal-context-conditioning.md"
+          },
+          {
+            "text": "输出中明确忽略实验、结果、附录等专属章节",
+            "passed": false,
+            "evidence": "summary.md missing keywords: ['忽略', 'Appendices']"
+          },
+          {
+            "text": "生成处理摘要 summary.md",
+            "passed": true,
+            "evidence": "summary.md exists"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "eval_id": 2,
+    "eval_name": "batch-litevla-h-and-arm",
+    "runs": {
+      "with_skill": {
+        "summary": {
+          "pass_rate": 1.0,
+          "passed": 3,
+          "failed": 0,
+          "total": 3
+        },
+        "expectations": [
+          {
+            "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+            "passed": true,
+            "evidence": "found keywords: ['LiteVLA', 'ARM', 'advantage', 'dual-rate', 'aerial']"
+          },
+          {
+            "text": "VLA 通用概念没有重复创建多个文件",
+            "passed": true,
+            "evidence": "1 files match ^vision-language-action (<= 1)"
+          },
+          {
+            "text": "输出覆盖至少两个不同目标领域",
+            "passed": true,
+            "evidence": "4 top-level dirs: ['01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI']"
+          }
+        ]
+      },
+      "without_skill": {
+        "summary": {
+          "pass_rate": 1.0,
+          "passed": 3,
+          "failed": 0,
+          "total": 3
+        },
+        "expectations": [
+          {
+            "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+            "passed": true,
+            "evidence": "found keywords: ['LiteVLA', 'ARM', 'advantage', 'dual-rate', 'aerial']"
+          },
+          {
+            "text": "VLA 通用概念没有重复创建多个文件",
+            "passed": true,
+            "evidence": "1 files match ^vision-language-action (<= 1)"
+          },
+          {
+            "text": "输出覆盖至少两个不同目标领域",
+            "passed": true,
+            "evidence": "4 top-level dirs: ['01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI']"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "eval_id": 3,
+    "eval_name": "vla-boundary-02-ai-vs-04-embodied",
+    "runs": {
+      "with_skill": {
+        "summary": {
+          "pass_rate": 1.0,
+          "passed": 3,
+          "failed": 0,
+          "total": 3
+        },
+        "expectations": [
+          {
+            "text": "VLA 通用概念按边界规则归入 02_AI",
+            "passed": true,
+            "evidence": "Found 1 files under 02_AI, e.g. 02_AI/vision-language-action-model.md"
+          },
+          {
+            "text": "with_skill 未将 VLA 通用定义放入 04_Embodied-AI",
+            "passed": true,
+            "evidence": "No .md files under 04_Embodied-AI"
+          },
+          {
+            "text": "输出解释了 02_AI 优先的边界判断理由",
+            "passed": true,
+            "evidence": "02_AI/vision-language-action-model.md contains ('通用', 'Embodied AI')"
+          }
+        ]
+      },
+      "without_skill": {
+        "summary": {
+          "pass_rate": 0.5,
+          "passed": 1,
+          "failed": 1,
+          "total": 2
+        },
+        "expectations": [
+          {
+            "text": "VLA 概念被放入 01-04 的某个目录",
+            "passed": false,
+            "evidence": "No .md files found under any of ('01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI')"
+          },
+          {
+            "text": "生成处理摘要 summary.md",
+            "passed": true,
+            "evidence": "summary.md exists"
+          }
+        ]
+      }
+    }
+  }
+]

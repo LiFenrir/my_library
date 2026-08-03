@@ -1,0 +1,51 @@
+{
+  "eval_id": 3,
+  "eval_name": "vla-boundary-02-ai-vs-04-embodied",
+  "runs": {
+    "with_skill": {
+      "summary": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3
+      },
+      "expectations": [
+        {
+          "text": "VLA 通用概念按边界规则归入 02_AI",
+          "passed": true,
+          "evidence": "Found 1 files under 02_AI, e.g. 02_AI/vision-language-action-model.md"
+        },
+        {
+          "text": "with_skill 未将 VLA 通用定义放入 04_Embodied-AI",
+          "passed": true,
+          "evidence": "No .md files under 04_Embodied-AI"
+        },
+        {
+          "text": "输出解释了 02_AI 优先的边界判断理由",
+          "passed": true,
+          "evidence": "02_AI/vision-language-action-model.md contains ('通用', 'Embodied AI')"
+        }
+      ]
+    },
+    "without_skill": {
+      "summary": {
+        "pass_rate": 0.5,
+        "passed": 1,
+        "failed": 1,
+        "total": 2
+      },
+      "expectations": [
+        {
+          "text": "VLA 概念被放入 01-04 的某个目录",
+          "passed": false,
+          "evidence": "No .md files found under any of ('01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI')"
+        },
+        {
+          "text": "生成处理摘要 summary.md",
+          "passed": true,
+          "evidence": "summary.md exists"
+        }
+      ]
+    }
+  }
+}

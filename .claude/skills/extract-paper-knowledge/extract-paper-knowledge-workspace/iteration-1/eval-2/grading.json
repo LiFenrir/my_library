@@ -1,0 +1,56 @@
+{
+  "eval_id": 2,
+  "eval_name": "batch-litevla-h-and-arm",
+  "runs": {
+    "with_skill": {
+      "summary": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3
+      },
+      "expectations": [
+        {
+          "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+          "passed": true,
+          "evidence": "found keywords: ['LiteVLA', 'ARM', 'advantage', 'dual-rate', 'aerial']"
+        },
+        {
+          "text": "VLA 通用概念没有重复创建多个文件",
+          "passed": true,
+          "evidence": "1 files match ^vision-language-action (<= 1)"
+        },
+        {
+          "text": "输出覆盖至少两个不同目标领域",
+          "passed": true,
+          "evidence": "4 top-level dirs: ['01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI']"
+        }
+      ]
+    },
+    "without_skill": {
+      "summary": {
+        "pass_rate": 1.0,
+        "passed": 3,
+        "failed": 0,
+        "total": 3
+      },
+      "expectations": [
+        {
+          "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+          "passed": true,
+          "evidence": "found keywords: ['LiteVLA', 'ARM', 'advantage', 'dual-rate', 'aerial']"
+        },
+        {
+          "text": "VLA 通用概念没有重复创建多个文件",
+          "passed": true,
+          "evidence": "1 files match ^vision-language-action (<= 1)"
+        },
+        {
+          "text": "输出覆盖至少两个不同目标领域",
+          "passed": true,
+          "evidence": "4 top-level dirs: ['01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI']"
+        }
+      ]
+    }
+  }
+}

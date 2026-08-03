@@ -1,0 +1,326 @@
+/**
+ * 苹果风主题：CSS 变量双主题 + 覆盖 VitePress 变量族
+ * 设计参照 apple.com：系统字体、大留白、精致圆角、毛玻璃、克制的色彩
+ */
+
+/* ========== 主题变量 ========== */
+:root {
+  /* 天蓝色系（苹果 systemCyan/Sky） */
+  --apple-accent: #0ea5e9;
+  --apple-accent-hover: #38bdf8;
+  --apple-bg: #f5f9fc;
+  --apple-text: #1d1d1f;
+  --apple-text-secondary: #6e6e73;
+  --apple-card-bg: #ffffff;
+  --apple-border: #d2d2d7;
+  --apple-code-bg: #f0f6fa;
+  --apple-nav-bg: rgba(245, 249, 252, 0.72);
+  /* 玻璃拟态：天蓝调半透明 + 同色细边 */
+  --apple-glass-bg: rgba(14, 165, 233, 0.07);
+  --apple-glass-border: rgba(14, 165, 233, 0.22);
+
+  /* 映射到 VitePress 变量族 */
+  --vp-c-brand-1: var(--apple-accent);
+  --vp-c-brand-2: var(--apple-accent-hover);
+  --vp-c-brand-3: var(--apple-accent);
+  --vp-c-bg: var(--apple-bg);
+  --vp-c-bg-alt: #f5f5f7;
+  --vp-c-bg-elv: var(--apple-card-bg);
+  --vp-c-text-1: var(--apple-text);
+  --vp-c-text-2: var(--apple-text-secondary);
+  --vp-c-divider: rgba(0, 0, 0, 0.08);
+  --vp-c-gutter: var(--vp-c-divider);
+
+  /* 字体：苹果系统字体栈 */
+  --vp-font-family-base:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC',
+    'Helvetica Neue', 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  --vp-font-family-mono:
+    ui-monospace, 'SF Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* 圆角体系 */
+  --apple-radius-s: 10px;
+  --apple-radius-m: 14px;
+  --apple-radius-l: 18px;
+
+  color-scheme: light;
+}
+
+.dark {
+  --apple-accent: #38bdf8;
+  --apple-accent-hover: #7dd3fc;
+  /* 深蓝黑底（非纯黑），让天蓝主题在深色下可感知 */
+  --apple-bg: #060b12;
+  --apple-text: #f5f5f7;
+  --apple-text-secondary: #a1a1a6;
+  --apple-card-bg: #0d1520;
+  --apple-border: #2a3a4a;
+  --apple-code-bg: #0d1520;
+  --apple-nav-bg: rgba(6, 11, 18, 0.72);
+  --apple-glass-bg: rgba(56, 189, 248, 0.1);
+  --apple-glass-border: rgba(56, 189, 248, 0.3);
+
+  --vp-c-bg: var(--apple-bg);
+  --vp-c-bg-alt: #0b1320;
+  --vp-c-bg-elv: var(--apple-card-bg);
+  --vp-c-divider: rgba(125, 211, 252, 0.14);
+
+  color-scheme: dark;
+}
+
+/* ========== 全局排版 ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 页面顶部淡天蓝渐变底，衬托玻璃卡的天蓝半透明 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 480px;
+  background: radial-gradient(60% 100% at 50% 0%, rgba(14, 165, 233, 0.1), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+.dark body::before {
+  background: radial-gradient(60% 100% at 50% 0%, rgba(56, 189, 248, 0.14), transparent 70%);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.005em;
+}
+
+/* 正文行高与段落节奏：苹果式宽松 */
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.75;
+}
+.vp-doc p {
+  margin: 1.1em 0;
+}
+
+/* 锚点跳转预留导航栏高度 */
+.vp-doc [id] {
+  scroll-margin-top: 80px;
+}
+
+/* 标题收紧字距，贴近 SF Pro Display 观感 */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPHero .name,
+.VPHero .text {
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.vp-doc h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 2.2em;
+}
+
+/* ========== 毛玻璃导航栏 ========== */
+.VPNavBar {
+  background: var(--apple-nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+/* 顶栏未滚动时隐藏分割线，滚动后由 VitePress 自带 .has-sidebar/.top 状态自然过渡 */
+.VPNavBar:not(.has-sidebar) .container {
+  max-width: 1152px;
+}
+
+/* ========== Hero 区 ========== */
+.VPHero {
+  padding: 80px 24px 64px;
+}
+.VPHero .name,
+.VPHero .text {
+  /* clamp 自适应大标题 */
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+.VPHero .text {
+  /* 品牌色渐变标题文字：天蓝 → 靛蓝 */
+  background: linear-gradient(120deg, var(--apple-accent), #38bdf8 45%, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.VPHero .tagline {
+  font-size: clamp(16px, 2.2vw, 21px);
+  color: var(--apple-text-secondary);
+  max-width: 640px;
+  margin: 18px auto 0;
+  line-height: 1.6;
+}
+.VPHero .actions {
+  margin-top: 32px;
+}
+/* 胶囊按钮：苹果式全圆角 */
+.VPHero .action .Button,
+.VPButton {
+  border-radius: 980px;
+  padding: 12px 26px;
+  font-weight: 500;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s;
+}
+.VPHero .action .Button:hover {
+  transform: scale(1.03);
+}
+
+/* ========== 首页 features 卡片（若使用） ========== */
+.VPFeature {
+  border-radius: var(--apple-radius-l);
+  background: var(--apple-card-bg);
+  border: 1px solid var(--apple-border);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
+}
+.VPFeature:hover {
+  transform: translateY(-4px);
+}
+
+/* ========== 侧边栏 ========== */
+.VPSidebar {
+  background: transparent;
+}
+.VPSidebarItem .text {
+  font-size: 14px;
+}
+.VPSidebarItem .item .link:hover {
+  color: var(--apple-accent);
+}
+
+/* ========== 代码块：苹果开发者文档风 ========== */
+.vp-doc div[class*='language-'] {
+  border-radius: var(--apple-radius-m);
+  border: 1px solid var(--vp-c-divider);
+  background: var(--apple-code-bg);
+  margin: 1.4em 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.vp-doc div[class*='language-'] pre {
+  padding: 20px 24px;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+/* 语言标签：右上角小字，弱化处理 */
+.vp-doc div[class*='language-'] .lang {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--apple-text-secondary);
+  opacity: 0.7;
+}
+/* 行内 code：药丸浅底 */
+.vp-doc :not(pre) > code {
+  background: var(--apple-code-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 0.88em;
+  color: var(--apple-text);
+}
+/* 复制按钮：收敛为低存在感的图标 */
+.vp-doc .copy {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.vp-doc div[class*='language-']:hover .copy {
+  opacity: 1;
+}
+
+/* 引用块：左侧细线 + 浅底 */
+.vp-doc blockquote {
+  border-left: 3px solid var(--apple-accent);
+  border-radius: 0 var(--apple-radius-s) var(--apple-radius-s) 0;
+  background: var(--vp-c-bg-alt);
+  padding: 12px 20px;
+}
+
+/* 表格圆角化 */
+.vp-doc table {
+  border-radius: var(--apple-radius-s);
+  overflow: hidden;
+  display: table;
+}
+
+/* ========== 非论文文档：玻璃拟态内容卡（论文笔记保持标准 wiki 阅读） ========== */
+.glass-doc .VPDoc .content-container {
+  background: var(--apple-glass-bg);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: var(--apple-radius-l);
+  padding: 32px 40px;
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.08);
+}
+@media (max-width: 768px) {
+  .glass-doc .VPDoc .content-container {
+    padding: 20px;
+  }
+}
+
+/* ========== wikilink 样式 ========== */
+.wikilink {
+  color: var(--apple-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.wikilink:hover {
+  border-bottom-color: var(--apple-accent);
+}
+.wikilink-missing {
+  color: var(--apple-text-secondary);
+  opacity: 0.65;
+}
+
+/* ========== 视口浮现动画 ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ========== 搜索弹窗圆角 ========== */
+.VPLocalSearchBox {
+  --vp-local-search-bg: var(--apple-card-bg);
+}
+.VPLocalSearchBox .shell {
+  border-radius: var(--apple-radius-l);
+}
+
+/* ========== 图片懒加载之外的观感：圆角 ========== */
+.vp-doc img {
+  border-radius: var(--apple-radius-s);
+}
+
+/* ========== 页脚 ========== */
+.VPFooter {
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--apple-text-secondary);
+}

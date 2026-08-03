@@ -1,0 +1,23 @@
+{
+  "skill_name": "extract-paper-knowledge",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请从 05_Papers/articles/pi0-7.md 中提取通用知识，沉淀到 01-04 的合适位置。注意 pi0.7 里提到的 flow matching action expert 是通用生成模型方法，VLA 架构本身属于具身智能。",
+      "expected_output": "识别 Introduction、Related Work、Flow-based VLA 章节；创建或追加 flow-matching 概念笔记到 02_AI，创建/追加 VLA 或 prompt-conditioning 相关笔记到 04_Embodied-AI；返回处理摘要。",
+      "files": ["05_Papers/articles/pi0-7.md"]
+    },
+    {
+      "id": 2,
+      "prompt": "批量处理 05_Papers/articles/litevla-h.md 和 05_Papers/articles/arm.md，把研究背景与相关工作中的通用概念补充到 01-04。注意两篇论文都涉及 VLA，避免重复创建相同主题的笔记。",
+      "expected_output": "分别读取两篇论文的 Introduction 和 Related Work；提取 dual-rate scheduling、advantage reward modeling 等概念；若 VLA 笔记已存在则追加或跳过；返回批量处理摘要。",
+      "files": ["05_Papers/articles/litevla-h.md", "05_Papers/articles/arm.md"]
+    },
+    {
+      "id": 3,
+      "prompt": "从 05_Papers/articles/pi0-7.md 提取 Vision-Language-Action (VLA) 模型的通用定义与训练目标。这个概念同时涉及通用多模态 AI 和具身智能，请判断应该放到哪个目录。",
+      "expected_output": "VLA 概念归入 04_Embodied-AI（因为它绑定机器人控制），但其中 flow matching / diffusion 训练目标归入 02_AI；提供分类理由与处理摘要。",
+      "files": ["05_Papers/articles/pi0-7.md"]
+    }
+  ]
+}

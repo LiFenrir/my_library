@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "pass_rate": 0.75,
+    "passed": 3,
+    "failed": 1,
+    "total": 4
+  },
+  "expectations": [
+    {
+      "text": "Flow matching 等通用生成模型方法被放入 01_Fundamentals 或 02_AI 目录",
+      "passed": true,
+      "evidence": "Found 1 files under 01_Fundamentals, e.g. 01_Fundamentals/ML/generative-models/flow-matching.md"
+    },
+    {
+      "text": "VLA 架构等具身概念被放入 04_Embodied-AI/VLA",
+      "passed": true,
+      "evidence": "Found 3 files under 04_Embodied-AI/VLA, e.g. 04_Embodied-AI/VLA/multimodal-context-conditioning.md"
+    },
+    {
+      "text": "输出中明确忽略实验、结果、附录等专属章节",
+      "passed": false,
+      "evidence": "summary.md missing keywords: ['忽略', 'Appendices']"
+    },
+    {
+      "text": "生成处理摘要 summary.md",
+      "passed": true,
+      "evidence": "summary.md exists"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "eval_id": 2,
+  "eval_name": "batch-litevla-h-and-arm",
+  "prompt": "批量处理 05_Papers/articles/litevla-h.md 和 05_Papers/articles/arm.md，把研究背景与相关工作中的通用概念补充到 01-04。注意两篇论文都涉及 VLA，避免重复创建相同主题的笔记。",
+  "assertions": [
+    {
+      "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+      "check": "summary_or_files_contain",
+      "args": ["LiteVLA", "ARM", "advantage", "dual-rate", "aerial"],
+      "target": "with_skill"
+    },
+    {
+      "text": "VLA 通用概念没有重复创建多个文件",
+      "check": "max_files_matching",
+      "args": ["^vision-language-action", "1"],
+      "target": "with_skill"
+    },
+    {
+      "text": "输出覆盖至少两个不同目标领域",
+      "check": "distinct_top_level_dirs",
+      "args": ["2"],
+      "target": "with_skill"
+    },
+    {
+      "text": "处理结果包含来自 litevla-h 或 arm 的概念",
+      "check": "summary_or_files_contain",
+      "args": ["LiteVLA", "ARM", "advantage", "dual-rate", "aerial"],
+      "target": "without_skill"
+    },
+    {
+      "text": "VLA 通用概念没有重复创建多个文件",
+      "check": "max_files_matching",
+      "args": ["^vision-language-action", "1"],
+      "target": "without_skill"
+    },
+    {
+      "text": "输出覆盖至少两个不同目标领域",
+      "check": "distinct_top_level_dirs",
+      "args": ["2"],
+      "target": "without_skill"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "pass_rate": 0.5,
+    "passed": 1,
+    "failed": 1,
+    "total": 2
+  },
+  "expectations": [
+    {
+      "text": "VLA 概念被放入 01-04 的某个目录",
+      "passed": false,
+      "evidence": "No .md files found under any of ('01_Fundamentals', '02_AI', '03_Robotics', '04_Embodied-AI')"
+    },
+    {
+      "text": "生成处理摘要 summary.md",
+      "passed": true,
+      "evidence": "summary.md exists"
+    }
+  ]
+}

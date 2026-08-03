@@ -1,0 +1,55 @@
+{
+  "eval_id": 1,
+  "eval_name": "pi0-7-flow-matching-boundary",
+  "prompt": "请从 05_Papers/articles/pi0-7.md 中提取通用知识，沉淀到 01-04 的合适位置。注意 pi0.7 里提到的 flow matching action expert 是通用生成模型方法，VLA 架构本身属于具身智能。",
+  "assertions": [
+    {
+      "text": "Flow matching 等通用生成模型方法被放入 02_AI 目录",
+      "check": "exists_file_under_path",
+      "args": ["02_AI"],
+      "target": "with_skill"
+    },
+    {
+      "text": "VLA 架构、prompt conditioning 等具身概念被放入 04_Embodied-AI/VLA",
+      "check": "exists_file_under_path",
+      "args": ["04_Embodied-AI/VLA"],
+      "target": "with_skill"
+    },
+    {
+      "text": "输出中明确忽略实验、结果、附录等专属章节",
+      "check": "summary_contains",
+      "args": ["忽略", "实验", "Appendices"],
+      "target": "with_skill"
+    },
+    {
+      "text": "生成处理摘要 summary.md",
+      "check": "file_exists",
+      "args": ["summary.md"],
+      "target": "with_skill"
+    },
+    {
+      "text": "Flow matching 等通用生成模型方法被放入 01_Fundamentals 或 02_AI 目录",
+      "check": "exists_file_under_any_path",
+      "args": ["01_Fundamentals", "02_AI"],
+      "target": "without_skill"
+    },
+    {
+      "text": "VLA 架构等具身概念被放入 04_Embodied-AI/VLA",
+      "check": "exists_file_under_path",
+      "args": ["04_Embodied-AI/VLA"],
+      "target": "without_skill"
+    },
+    {
+      "text": "输出中明确忽略实验、结果、附录等专属章节",
+      "check": "summary_contains",
+      "args": ["忽略", "实验", "Appendices"],
+      "target": "without_skill"
+    },
+    {
+      "text": "生成处理摘要 summary.md",
+      "check": "file_exists",
+      "args": ["summary.md"],
+      "target": "without_skill"
+    }
+  ]
+}

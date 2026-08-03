@@ -1,0 +1,285 @@
+{
+  "main": {
+    "id": "d48e6a89d3c2f583",
+    "type": "split",
+    "children": [
+      {
+        "id": "022ec6a5fdf777c6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24d558b4602d6cf4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05_Papers/articles/chi0.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "chi0"
+            }
+          }
+        ]
+      },
+      {
+        "id": "5d3ac7ca16a0960a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "71f6915f5f422012",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/home/kemove/INNOV/library",
+                  "focus": false,
+                  "profile": {
+                    "args": [
+                      "--login"
+                    ],
+                    "environment": [],
+                    "executable": "/bin/bash",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "linux": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "profileSourceId": "linuxIntegratedDefault",
+                  "serial": null,
+                  "userTitle": ""
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "终端：⠐ Claude Code"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9a8c9c09b4b6d0d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "09d1ef711bea41d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3405b61c44cc9f17",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "0759def3e77c3f13",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "e07927cac4e138e2",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cbafd71170da9020",
+    "type": "split",
+    "children": [
+      {
+        "id": "c459df3e33eae35d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c15cbaff6a071297",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "ebaf0f2aa23999a1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "7a7fd3b6ce44586a",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "cb830473c1c5ef78",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "e9bcb20f083d8a3e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "terminal:Open terminal": false
+    }
+  },
+  "active": "71f6915f5f422012",
+  "lastOpenFiles": [
+    "05_Papers/articles/chi0.md",
+    "05_Papers/articles/cosmos-policy.md",
+    "05_Papers/articles/characterizing-vla-models.md",
+    "05_Papers/notes/arm.md",
+    "05_Papers/articles/arm.md",
+    "05_Papers/articles/causal-world-modeling.md",
+    "04_Embodied-AI/Sim2Real/3d-gaussian-splatting-simulator.md",
+    "02_AI/skills/archive-papers.md",
+    "02_AI/AI-Infra/AI-Edge-Performance-Evaluation.md",
+    "02_AI/Agent/recursive-multi-agent-system.md",
+    "01_Fundamentals/ML/Aleatoric-Epistemic-Uncertainty.md",
+    "01_Fundamentals/ML/Advantage-Weighted-Offline-RL.md",
+    "01_Fundamentals/ML/Advantage-Estimation.md",
+    "99_Attachments/papers/images/arm/3d29758dc6bb752d7b804e40dd4121fd279578bfabb21a8fd096887137cf7476.jpg",
+    "04_Embodied-AI/World-Model/Asynchronous-Inference-for-Robot-Control.md",
+    "Templates/index.md",
+    "99_Attachments/papers/pdfs/arm.pdf",
+    "08_Experiments/innov_openpi-normalization-spike.md",
+    "06_Projects/external/Evo-RLT.md",
+    "06_Projects/external/index.md",
+    "02_AI/Agent/recursive-multi-agent-system.md.tmp.2860942.47b3e16b49d5",
+    "04_Embodied-AI/World-Model/world-action-model.md.tmp.2860942.e8b763ec3683",
+    "04_Embodied-AI/VLA/Flow-based-VLA.md.tmp.2860942.96d6f8770a70",
+    "04_Embodied-AI/VLA/Time-to-Success-Evaluation.md",
+    "04_Embodied-AI/VLA/Time-to-Success-Evaluation.md.tmp.2860942.16622e53c7b8",
+    "03_Robotics/Real2Sim-Pipeline.md",
+    "03_Robotics/Real2Sim-Pipeline.md.tmp.2860942.ec0ba34c089b",
+    "04_Embodied-AI/Robot-RL/Online-RL-VLA-Fine-tuning.md",
+    "04_Embodied-AI/Robot-RL/Online-RL-VLA-Fine-tuning.md.tmp.2860942.798e2dd7e47b",
+    "01_Fundamentals/ML/Kolmogorov-Smirnov-Test.md",
+    "01_Fundamentals/ML/Kolmogorov-Smirnov-Test.md.tmp.2860942.136d70b66ce3",
+    "01_Fundamentals/ML/Kaplan-Meier-Estimator.md",
+    "01_Fundamentals/ML/Kaplan-Meier-Estimator.md.tmp.2860942.ab66ecddf5a0",
+    "01_Fundamentals/ML/Cold-Start-in-RL.md",
+    "01_Fundamentals/ML/Cold-Start-in-RL.md.tmp.2860942.1c8064072f8d",
+    "02_AI/LLM/RLVR.md",
+    "01_Fundamentals/ML/Tsallis-Entropy.md",
+    "99_Attachments/papers/images/grounded-sam/f28660ba8708e85407d9c360bd06046d7d188a7dce4e41772837856e8e16dc4a.jpg",
+    "99_Attachments/papers/images/grounded-sam/9053f825ca3b174ef10376e9f6947289cd278d94fee7a016774b1b725a8b8ec8.jpg",
+    "99_Attachments/papers/images/grounded-sam/adae50f4eec90d5dbc7449a13839c18fd7793d6e0b816d6c74459a26a47ff063.jpg",
+    "99_Attachments/papers/images/grounded-sam/7168c02013fe27338afc61e1dea3d021e1c2ca02071f35653cdf32c379e24bac.jpg",
+    "99_Attachments/papers/images/grounded-sam/5d922a1b4b2f754598e5af1ceff700d50afa1c4cac9713a58e8e24a3cc4c9d46.jpg",
+    "99_Attachments/papers/images/grounded-sam/33a4bd7043b268d68c1c8940ef4b91013fc368d37b8493e88cf21c2c4f879402.jpg",
+    "99_Attachments/papers/images/segment-anything/ff93c17d6a869686ffdb71922434e9dd62a576f6b721dd9e97f8946eada7eb1e.jpg",
+    "99_Attachments/papers/images/segment-anything/ff8d82f2d851009308c26d1091e66a0efcd51902ec9280d32337726b7798845b.jpg",
+    "99_Attachments/papers/images/segment-anything/f085491d46cd4050bd208dec8444410de7dfe9826148f5ed86de766c5692b6ca.jpg"
+  ]
+}
