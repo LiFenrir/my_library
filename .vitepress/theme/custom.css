@@ -324,3 +324,9 @@ body {
   border-top: 1px solid var(--vp-c-divider);
   color: var(--apple-text-secondary);
 }
+
+/* ========== 论文首页 ========== */
+/* 隐藏 markdown wikilinks，仅展示 PapersIndex 组件 */
+.papers-index .vp-doc {
+  display: none;
+}

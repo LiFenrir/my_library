@@ -3,11 +3,12 @@ title: "05_Papers"
 description: "论文专区入口：人工笔记与 MinerU 原文"
 tags: [moc, papers]
 created: 2026-07-15
+layout: page
+sidebar: false
+pageClass: papers-index
 ---
 
-# 05_Papers
-
-个人论文资产库，按研究方向粗分类。知识关系靠 [[02_AI/Obsidian-Bidirectional-Links|双向链接]] 与 `#标签` 自然生长。
+<PapersIndex />
 
 ## 目录
 

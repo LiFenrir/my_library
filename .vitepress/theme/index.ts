@@ -7,6 +7,7 @@ import ScrollProgress from './components/ScrollProgress.vue'
 import HomeSections from './components/HomeSections.vue'
 import AboutMe from './components/AboutMe.vue'
 import EntryCards from './components/EntryCards.vue'
+import PapersIndex from './components/PapersIndex.vue'
 import { data as sectionsData } from '../data/sections.data'
 import './custom.css'
 
@@ -66,6 +67,7 @@ export default {
     app.component('HomeSections', HomeSections)
     app.component('AboutMe', AboutMe)
     app.component('EntryCards', EntryCards)
+    app.component('PapersIndex', PapersIndex)
     // 首页分区卡片数据（构建期由 createContentLoader 生成）
     app.provide('sectionsData', sectionsData)
   },

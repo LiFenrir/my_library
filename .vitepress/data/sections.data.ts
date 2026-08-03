@@ -6,6 +6,7 @@ export interface SectionItem {
   url: string
   created: string
   description: string
+  tags: string[]
 }
 
 export interface SectionData {
@@ -27,7 +28,14 @@ function toItem(page: { url: string; frontmatter: Record<string, any> }): Sectio
     url: page.url,
     created,
     description: page.frontmatter.description ?? '',
+    tags: normalizeTags(page.frontmatter.tags),
   }
+}
+
+function normalizeTags(raw: any): string[] {
+  if (Array.isArray(raw)) return raw.map(String)
+  if (typeof raw === 'string') return raw.split(',').map(s => s.trim()).filter(Boolean)
+  return []
 }
 
 export default createContentLoader(
