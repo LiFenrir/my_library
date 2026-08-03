@@ -41,7 +41,7 @@ export default createContentLoader(
           .sort((a, b) => b.created.localeCompare(a.created))
       const papers = byDir('/05_Papers/notes')
       // 只展示自己的项目，排除 MOC 页
-      const own = byDir('/06_Projects/own').filter((p) => !p.url.endsWith('/INNOV-Projects') && !p.url.endsWith('/own'))
+      const own = byDir('/06_Projects/own').filter((p) => !p.url.endsWith('/innov-projects') && !p.url.endsWith('/own/'))
       const ai = byDir('/02_AI/skills')
       return {
         papers,
