@@ -5,10 +5,11 @@ tags: [moc, papers]
 created: 2026-07-15
 layout: page
 sidebar: false
-pageClass: papers-index
 ---
 
 <PapersIndex />
+
+<div class="obsidian-links">
 
 ## 目录
 
@@ -75,3 +76,5 @@ pageClass: papers-index
 2. 生成/复制 MinerU 原文到 `05_Papers/articles/<slug>.md`
 3. 在 `05_Papers/notes/` 中撰写结构化笔记
 4. 将图片放入 `99_Attachments/papers/images/<slug>/`
+
+</div>
