@@ -326,7 +326,7 @@ body {
 }
 
 /* ========== 论文首页 ========== */
-/* 隐藏 markdown wikilinks，仅展示 PapersIndex 组件 */
-.papers-index .vp-doc {
+/* layout:page 下 VPPage 承载 Content；隐藏 wikilinks 仅保留 PapersIndex */
+.papers-index .VPPage > :not(.papers-index) {
   display: none;
 }
