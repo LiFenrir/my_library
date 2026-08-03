@@ -7,7 +7,7 @@ export default defineConfig({
   description: 'LiFenrir 的个人主页：具身智能从业者的论文笔记、项目复盘与 AI 杂记',
   lang: 'zh-CN',
   // GitHub Pages 项目页路径，按仓库名调整
-  base: '/library/',
+  base: '/my_library/',
   cleanUrls: true,
 
   // 只发布以下目录之外的内容一律排除（Inbox、附件、模板、工具链等）
