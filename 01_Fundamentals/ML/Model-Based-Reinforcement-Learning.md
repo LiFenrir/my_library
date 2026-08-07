@@ -42,7 +42,7 @@ Model-Based RL（MBRL）先学习环境转移模型，再基于该模型做规�
 - [[Evolution-Strategies]] — 可用于优化小控制器的优化方法。
 - [[04_Embodied-AI/Sim2Real/index|Sim2Real]] — 利用仿真模型学到的策略迁移到真实环境。
 
-## 补充：来自 [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]
+## 补充：来自 [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]
 
 LeCun 将自主智能体建模为模型预测控制（[[Model-Predictive-Control|MPC]]）的可学习版本：
 
@@ -54,4 +54,4 @@ LeCun 将自主智能体建模为模型预测控制（[[Model-Predictive-Control
 ## 来源
 
 - [[05_Papers/articles/world-models|World Models]]
-- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]，LeCun，2022
+- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]，LeCun，2022

@@ -45,7 +45,7 @@ Action Chunking 是一种机器人策略**一次预测未来多步动作**并只
 
 - [[Real-time-Action-Chunking|Real-time Action Chunking]] — 处理推理延迟的动作块生成
 - [[Action-Expert|Action Expert]] — 负责预测动作块的模块
-- [[Vision-Language-Action-Model|Vision-Language-Action Model]] — 使用 Action Chunking 的机器人策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — 使用 Action Chunking 的机器人策略
 
 ## Papers
 

@@ -1,4 +1,4 @@
-<!-- 条目卡片网格：项目 / AI 杂记列表页用，与首页同款天蓝玻璃小卡 -->
+<!-- 条目卡片网格：项目 / AI 之旅列表页用，与首页同款天蓝玻璃小卡 -->
 <template>
   <div class="entry-cards-page">
     <header class="entry-cards-page__header">
@@ -27,7 +27,7 @@ const props = defineProps<{ section: 'projects' | 'ai' }>()
 const data = inject<SectionData>('sectionsData')!
 const items = computed(() => (props.section === 'projects' ? data.ownProjects : data.aiSkills))
 const icon = computed(() => (props.section === 'projects' ? '🛠' : '🤖'))
-const title = computed(() => (props.section === 'projects' ? '我的项目' : 'AI 杂记'))
+const title = computed(() => (props.section === 'projects' ? '我的项目' : 'AI 之旅'))
 const subtitle = computed(() =>
   props.section === 'projects' ? 'VLA 训练与机器人部署的实战复盘' : '工具链与自动化工作流随手记'
 )

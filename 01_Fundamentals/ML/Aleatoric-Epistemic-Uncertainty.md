@@ -66,4 +66,4 @@ LeCun 的隐变量 EBM 框架将所有不确定性统一压缩到隐变量 $z$ �
 
 ## 来源
 
-- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]，LeCun，2022
+- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]，LeCun，2022

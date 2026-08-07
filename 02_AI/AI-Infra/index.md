@@ -14,8 +14,7 @@ AI Infra 涵盖支撑大模型和具身智能系统训练、推理与部署的�
 - [[02_AI/AI-Infra/GGUF-Quantization|GGUF Quantization]] — 大模型量化格式
 - [[02_AI/AI-Infra/llama-cpp|llama.cpp]] — 边缘推理框架
 - [[02_AI/AI-Infra/Processing-in-Memory|Processing in Memory]] — 存内计算
-- [[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — VLA 推理优化
-- [[02_AI/AI-Infra/vla-inference-latency|VLA Inference Latency]] — 延迟分析
+- [[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — VLA 推理延迟与调度入口
 
 ## 相关概念
 

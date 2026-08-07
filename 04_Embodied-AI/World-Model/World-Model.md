@@ -130,9 +130,9 @@ World Models 中 $C$ 依赖 $M$ 逐步预测未来，属于较早期的 C–M �
 ## 来源
 
 - [[05_Papers/articles/world-models|World Models]]
-- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]，LeCun，2022
+- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]，LeCun，2022
 
-## 补充：来自 [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]
+## 补充：来自 [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]
 
 LeCun 从认知架构角度提出另一种世界模型路线：不再生成像素，而是在表示空间中做预测，核心架构为 [[Joint-Embedding-Predictive-Architecture|JEPA]] 与 [[Hierarchical-JEPA|H-JEPA]]。
 
@@ -156,4 +156,4 @@ LeCun 从认知架构角度提出另一种世界模型路线：不再生成像�
 
 - [[Joint-Embedding-Predictive-Architecture|JEPA]] — 非生成式预测架构。
 - [[Hierarchical-JEPA|H-JEPA]] — 分层世界模型。
-- [[Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — 包含世界模型的完整认知架构。
+- [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|[[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — 包含世界模型的完整认知架构。

@@ -36,7 +36,7 @@ VLM 常被用作 Vision-Language-Action（VLA）模型的感知与语言理解 b
 
 ## Related Concepts
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 在 VLM 基础上增加动作输出的机器人策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 在 VLM 基础上增加动作输出的机器人策略
 - [[04_Embodied-AI/VLA/Action-Expert|Action Expert]] — VLA 中负责生成动作的专业模块
 - [[04_Embodied-AI/VLA/Knowledge-Insulation|Knowledge Insulation]] — 保护 VLM backbone 表示不被动作梯度破坏的训练技巧
 

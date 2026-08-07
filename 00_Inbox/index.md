@@ -12,6 +12,9 @@ created: 2026-07-28
 ## 最新待整理
 
 - （已迁移）[[06_Projects/external/lingbot/index|LingBot 仓库五子项目]] — 包括 lingbot-depth/va/vla/vla-v2/world-v2 与 Python 环境分析
+- （已迁移）[[03_Robotics/Perception/Coordinate-Frames|机器人通用坐标系速查]] — 坐标系约定与转换
+- （已迁移）[[03_Robotics/Perception/URDF-Rendering-Calibration|URDF 渲染几何标定方法]] — 分层标定方法
+- （已迁移）[[08_Experiments/URDF-Rendering-Calibration-Retro|URDF 渲染标定复盘]] — 首次标定复盘
 
 相关入口：
 - [[06_Projects/external/index|06_Projects/external]] — 外部项目

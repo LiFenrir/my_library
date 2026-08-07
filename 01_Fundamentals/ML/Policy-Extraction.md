@@ -36,7 +36,7 @@ $$
 \hat{\pi}(\mathbf{a}|\mathbf{o}, \ell) \propto \pi_{\mathrm{ref}}(\mathbf{a}|\mathbf{o}, \ell) \left( \frac{\pi_{\mathrm{ref}}(\mathbf{a}|I, \mathbf{o}, \ell)}{\pi_{\mathrm{ref}}(\mathbf{a}|\mathbf{o}, \ell)} \right)^\beta
 $$
 
-其中 $I$ 为二值化优势指示器。训练时同时学习条件与非条件分布，推理时通过 [[Classifier-Free-Guidance]] 组合。
+其中 $I$ 为二值化优势指示器。训练时同时学习条件与非条件分布，推理时通过 [[02_AI/Generative-Models/Classifier-Free-Guidance]] 组合。
 
 ## Related Concepts
 

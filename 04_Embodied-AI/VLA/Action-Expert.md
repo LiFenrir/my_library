@@ -33,7 +33,7 @@ VLM backbone 处理视觉和语言信息，Action Expert 则关注这些多模�
 
 ## Related Concepts
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — Action Expert 是 VLA 的核心组件
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — Action Expert 是 VLA 的核心组件
 - [[04_Embodied-AI/VLA/Flow-based-VLA|Flow-based VLA]] — 使用流匹配目标的 Action Expert
 - [[04_Embodied-AI/VLA/Knowledge-Insulation|Knowledge Insulation]] — 训练 Action Expert 时的常用技巧
 - [[04_Embodied-AI/VLA/Action-Chunking|Action Chunking]] — Action Expert 通常输出动作块

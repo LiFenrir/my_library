@@ -40,7 +40,7 @@ created: 2026-07-30
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 评估对象
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 评估对象
 - [[04_Embodied-AI/VLA/VLA-Edge-Characterization|VLA Edge Characterization]] — 互补的延迟与部署评估
 
 ## 来源

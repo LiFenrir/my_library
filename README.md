@@ -9,7 +9,7 @@ created: 2026-07-15
 
 个人长期知识资产入口。这里不是档案馆，而是可随时重写、链接、重组的 **第二大脑**。
 
-> 目录只做粗分类，知识关系靠 [[02_AI/Obsidian-Bidirectional-Links|双向链接]] 和 `#标签` 自然生长。
+> 目录只做粗分类，知识关系靠 [[02_AI/General/Obsidian-Bidirectional-Links|双向链接]] 和 `#标签` 自然生长。
 
 ---
 
@@ -79,5 +79,5 @@ created: 2026-07-15
 ## 使用约定
 
 1. 新内容先丢进 `00_Inbox`，定期整理。
-2. 笔记优先用 `#标签` 和 `[[02_AI/Obsidian-Bidirectional-Links|链接]]` 组织，目录只作粗分桶。
+2. 笔记优先用 `#标签` 和 `[[02_AI/General/Obsidian-Bidirectional-Links|链接]]` 组织，目录只作粗分桶。
 3. 概念笔记遵循链式结构：Concept → Theory → Paper → Engineering → Experiment → Project。

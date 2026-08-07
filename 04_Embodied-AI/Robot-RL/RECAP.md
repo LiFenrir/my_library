@@ -28,7 +28,7 @@ RL with Experience and Corrections via Advantage-conditioned Policies：一套�
 
 - **离线 RL 预训练**：先在大量演示数据上预训练 VLA 与值函数，获得通用基础。
 - **利用异构数据**：演示、自主经验、专家纠正均可用于训练，不浪费任何样本。
-- **避免策略梯度**：用 [[Advantage-Conditioning]] 替代 PPO，天然适配 [[Flow-Matching]] VLA。
+- **避免策略梯度**：用 [[Advantage-Conditioning]] 替代 PPO，天然适配 [[02_AI/Generative-Models/Flow-Matching]] VLA。
 - **可扩展**：仅通过稀疏 episode 级奖励即可训练，降低真实环境奖励工程成本。
 
 ## Key Design Choices
@@ -56,8 +56,8 @@ RL with Experience and Corrections via Advantage-conditioned Policies：一套�
 - [[Advantage-Conditioning]] — RECAP 的核心策略提取机制
 - [[Distributional-Value-Function]] — RECAP 中值函数的实现方式
 - [[Offline-RL-for-VLA]] — RECAP 所属的 VLA 离线 RL 范式
-- [[Vision-Language-Action-Model]] — RECAP 的改进对象
-- [[Classifier-Free-Guidance]] — 可用于 RECAP 推理时进一步锐化策略
+- [[[[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — RECAP 的改进对象
+- [[02_AI/Generative-Models/Classifier-Free-Guidance]] — 可用于 RECAP 推理时进一步锐化策略
 
 ## Papers
 

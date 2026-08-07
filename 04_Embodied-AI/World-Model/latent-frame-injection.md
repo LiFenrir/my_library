@@ -51,7 +51,7 @@ created: 2026-07-29
 ## 与其他概念的关系
 
 - [[04_Embodied-AI/World-Model/World-Model|World Model]] — Latent Frame Injection 是视频世界模型适配的一种方式
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 与 Cosmos Policy 相对的策略范式
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 与 Cosmos Policy 相对的策略范式
 - [[01_Fundamentals/ML/diffusion-model|Diffusion Model]] — Cosmos Policy 的基础生成模型
 
 ## 实现细节补充

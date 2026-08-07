@@ -15,8 +15,10 @@ created: 2026-07-31
 - [[02_AI/LLM/Continual-Learning|Continual Learning]] — 持续学习
 - [[02_AI/LLM/Knowledge-Preserving-Fine-Tuning|Knowledge-Preserving Fine-Tuning]] — VLA 等场景下的知识保持微调
 - [[02_AI/LLM/Compact-Vision-Language-Models|Compact Vision-Language Models]] — 紧凑视觉-语言模型
+- [[02_AI/LLM/Chain-of-Thought-Reasoning|Chain-of-Thought Reasoning]] — 思维链推理
 
 ## 相关入口
 
 - [[02_AI/index|02_AI]] — 通用人工智能
 - [[04_Embodied-AI/VLA/index|VLA]] — 视觉-语言-动作模型
+- [[05_Papers/index|05_Papers]] — 论文精读

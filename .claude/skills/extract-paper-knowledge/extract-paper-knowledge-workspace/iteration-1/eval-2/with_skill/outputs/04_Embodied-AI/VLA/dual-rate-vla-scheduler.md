@@ -27,10 +27,10 @@ $$
 
 ## 与其他概念的关系
 
-- [[llm-vla-inference-latency|LLM/VLA 推理延迟分解]] — 调度基于预填充主导的延迟特征。
-- [[outer-loop-guidance|外环引导]] — 动作分支输出外环引导指令。
-- [[semantic-perception-service|语义感知作为低速服务]] — 语义分支的角色定位。
+- [[llm-vla-inference-latency|LLM/VLA 推理延迟分[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 调度基于预填充主导的延迟特征。
+- [[outer-loop-guidance|外环引[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 动作分支输出外环引导指令。
+- [[semantic-perception-service|语义感知作为低速服[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 语义分支的角色定位。
 
 ## 来源
 
-- [[05_Papers/articles/litevla-h|LiteVLA-H]]
+- [[05_Papers/articles/litevla-h|LiteVLA-[[02_AI/AI-Infra/VLA-Inference|VLA Inference]]

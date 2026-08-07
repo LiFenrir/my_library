@@ -1,13 +1,16 @@
 ---
 title: "Causal World Model"
 description: "通过因果注意力保持时间一致性，将视觉动力学预测与动作推断统一在自回归序列中的世界模型"
+aliases:
+  - Causal Latent World Model
+  - CLWM
 tags: [concept, embodied-ai, world-model, causal-reasoning]
 created: 2026-07-29
 ---
 
 # Causal World Model
 
-**核心定义**：Causal World Model 是一类尊重物理世界因果结构的世界模型：当前状态仅依赖于过去，未来不能影响现在。它通过因果注意力掩码和自回归生成，将视觉动力学预测与动作推断统一在单一序列中。
+一类尊重物理世界因果结构的世界模型：当前状态仅依赖于过去，未来不能影响现在。它通过因果注意力掩码和自回归生成，将视觉动力学预测与动作推断统一在单一序列中。
 
 ## 核心问题
 
@@ -35,9 +38,39 @@ $$
 
 - **统一潜在空间**：视觉和动作 token 共享潜在空间
 - **Mixture-of-Transformers (MoT)**：双 stream 架构，共享注意力
-- **KV-cache**：缓存历史 key-value，提供长程记忆
 - **Causal Attention Masking**：确保当前预测只依赖过去
 - **Closed-loop Rollout**：每步用真实观测重新校准
+- **KV-cache / TTT Memory**：缓存历史 key-value 或通过 Test-Time Training 实现常数空间长程记忆
+
+## Causal Latent World Model 变体
+
+在高层语义特征空间（如 DINOv3 特征）而非像素/VAE 空间中进行世界建模，通过解耦交互语义与视觉噪声来提高域泛化能力。
+
+### 与像素世界模型的区别
+
+| | 像素/VAE 世界模型 | Causal Latent World Model |
+|---|---|---|
+| 生成目标 | 原始像素或 VAE latent | DINOv3 语义特征 |
+| 优势 | 视觉真实感强 | 对光照/背景变化鲁棒 |
+| 劣势 | 容易过拟合纹理 | 需要预训练视觉特征 |
+
+### 训练目标
+
+统一监督视觉动力学与逆动力学：
+
+$$
+\mathcal{L} = \mathcal{L}_{\text{dyn}} + \lambda \mathcal{L}_{\text{inv}}
+$$
+
+- 视觉动力学损失：预测下一帧语义/像素特征的速度场
+- 逆动力学损失：基于当前与未来观测解码动作
+
+为增强对不完美视觉历史的鲁棒性，训练时对历史特征以概率加噪。
+
+### 内存与延迟优化
+
+- [[04_Embodied-AI/World-Model/Dual-State-TTT-Memory|Dual-State TTT Memory]]：用 Test-Time Training 替代 KV cache，实现 $\mathcal{O}(1)$ 长程记忆
+- [[04_Embodied-AI/World-Model/speculative-asynchronous-inference|Speculative Asynchronous Inference (SAI)]]：在机器人执行当前动作块时预去噪下一步，降低约 50% 阻塞延迟
 
 ## 与 LingBot-VA
 
@@ -60,18 +93,20 @@ LingBot-VA 是 Causal World Model 的一个实例：
   - 需要大规模视频预训练
   - 视频生成质量影响控制性能
 
-## 与其他概念的关系
+## Related Concepts
 
 - [[04_Embodied-AI/World-Model/World-Model|World Model]] — Causal World Model 的子类
-- [[02_AI/Flow-Matching|Flow Matching]] — 视频-动作生成的训练目标
-- [[02_AI/LLM/Mixture-of-Transformers|Mixture-of-Transformers]] — LingBot-VA 的架构
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 与 Causal World Model 是机器人策略的两条路径
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — 视频-动作生成的训练目标
+- [[02_AI/LLM/Mixture-of-Transformers|Mixture-of-Transformers]] — 共享主干架构
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — 与 Causal World Model 是机器人策略的两条路径
+- [[04_Embodied-AI/World-Model/world-action-model|World Action Model]] — CWM 可被视为 WAM 的一种实现
+- [[04_Embodied-AI/World-Model/Dual-State-TTT-Memory|Dual-State TTT Memory]] — 长程记忆机制
+- [[04_Embodied-AI/World-Model/speculative-asynchronous-inference|Speculative Asynchronous Inference]] — 异步推理降低延迟
 
-## 来源
+## Sources
 
-- [[05_Papers/articles/causal-world-modeling|Causal World Modeling for Robot Control]]，第 1、3.2 节
-
-## 补充：来自 [[05_Papers/articles/causal-world-modeling|Causal World Modeling for Robot Control]]
+- [[05_Papers/notes/causal-world-modeling|Causal World Modeling for Robot Control]]
+- [[05_Papers/notes/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Tasks]]
 
 ### Variable Chunk Size Training
 

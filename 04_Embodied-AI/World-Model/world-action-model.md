@@ -26,7 +26,7 @@ Fast-WAM 研究表明：WAM 的性能提升主要来自训练时的视频建模�
 ## 与其他概念的关系
 
 - [[04_Embodied-AI/World-Model/World-Model|World Model]] — WAM 是世界模型在机器人控制中的具体化
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 与 WAM 并行的策略范式
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 与 WAM 并行的策略范式
 - [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — WAM 的一种因果实现
 
 ## 形式化表述

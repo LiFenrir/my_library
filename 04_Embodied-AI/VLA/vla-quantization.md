@@ -39,10 +39,10 @@ created: 2026-07-29
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 量化的对象
-- [[02_AI/AI-Infra/vla-inference-latency|VLA Inference Latency]] — 量化试图解决的核心问题
-- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 另一种边缘优化策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Actio[[02_AI/AI-Infra/VLA-Inference|VLA Inference]]|Vision-Language-Action Mode[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 量化的对象
+- [[02_AI/AI-Infra/VLA-Inference|VLA Inference]]|VLA Inference Latenc[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 量化试图解决的核心问题
+- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Schedulin[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 另一种边缘优化策略
 
 ## 来源
 
-- [[05_Papers/articles/litevla-edge|LiteVLA-Edge: Quantized On-Device Multimodal Control for Embedded Robotics]]，第 IV 节
+- [[05_Papers/articles/litevla-edge|LiteVLA-Edge: Quantized On-Device Multimodal Control for Embedded Robotic[[02_AI/AI-Infra/VLA-Inference|VLA Inference]]，第 IV 节

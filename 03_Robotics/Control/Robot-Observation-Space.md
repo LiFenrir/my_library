@@ -43,7 +43,7 @@ Robot Observation Space 定义了机器人策略可获取的**环境状态表示
 ## Related Concepts
 
 - [[03_Robotics/Control/Robot-Action-Space|Robot Action Space]] — 策略输出的控制信号
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 处理多模态观察输入的模型
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 处理多模态观察输入的模型
 - [[04_Embodied-AI/VLA/Action-Chunking|Action Chunking]] — 基于历史观察预测未来动作
 
 ## Papers

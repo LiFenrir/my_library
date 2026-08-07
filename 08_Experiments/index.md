@@ -15,6 +15,10 @@ created: 2026-07-23
 
 - [[08_Experiments/innov_openpi-normalization-spike|训练损失尖峰：quantile 归一化与低方差维度]] — 右臂夹爪低方差导致归一化放大，引发 flow matching loss 尖峰
 
+### URDF 渲染标定
+
+- [[08_Experiments/URDF-Rendering-Calibration-Retro|URDF-Rendering-Calibration-Retro]] — 首次 URDF 渲染几何标定的弯路与必需参数清单
+
 ## 相关
 
 - [[06_Projects/own/innov-openpi|innov_openpi]]

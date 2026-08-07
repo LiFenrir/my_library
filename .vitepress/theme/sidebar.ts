@@ -53,9 +53,9 @@ function scanDir(dir: string, routeBase: string): SidebarEntry[] {
     })
 }
 
-// 论文笔记：解析 05_Papers/index.md 的 `### 方向` 分组与 [[slug]] 链接
+// 论文笔记：解析 05_Papers/by-topic.md 的 `### 方向` 分组与 [[slug]] 链接
 function papersGroups(): SidebarGroup[] {
-  const indexFile = path.join(ROOT, '05_Papers/index.md')
+  const indexFile = path.join(ROOT, '05_Papers/by-topic.md')
   const groups: SidebarGroup[] = []
   try {
     const content = fs.readFileSync(indexFile, 'utf-8')
@@ -86,10 +86,10 @@ function papersGroups(): SidebarGroup[] {
 }
 
 export function buildSidebar() {
-  // 仅论文笔记保留左侧目录树；我的项目 / AI 杂记为卡片列表页，无侧边栏
+  // 仅论文笔记保留左侧目录树；我的项目 / AI 之旅为卡片列表页，无侧边栏
   return {
     '/05_Papers/': [
-      { text: '论文专区', link: '/05_Papers/', items: [] },
+      { text: '论文专区', items: [] },
       ...papersGroups(),
     ] as SidebarGroup[],
   }

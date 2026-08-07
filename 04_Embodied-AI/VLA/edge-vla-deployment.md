@@ -41,10 +41,10 @@ created: 2026-07-29
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/vla-quantization|VLA Quantization]] — 边缘部署的核心压缩技术
-- [[02_AI/AI-Infra/vla-inference-latency|VLA Inference Latency]] — 边缘部署需要优化的核心指标
-- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 边缘调度策略
+- [[04_Embodied-AI/VLA/vla-quantization|VLA Quantizatio[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 边缘部署的核心压缩技术
+- [[02_AI/AI-Infra/VLA-Inference|VLA Inference]]|VLA Inference Latenc[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 边缘部署需要优化的核心指标
+- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Schedulin[[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — 边缘调度策略
 
 ## 来源
 
-- [[05_Papers/articles/litevla-edge|LiteVLA-Edge: Quantized On-Device Multimodal Control for Embedded Robotics]]，第 I、III、IV 节
+- [[05_Papers/articles/litevla-edge|LiteVLA-Edge: Quantized On-Device Multimodal Control for Embedded Robotic[[02_AI/AI-Infra/VLA-Inference|VLA Inference]]，第 I、III、IV 节

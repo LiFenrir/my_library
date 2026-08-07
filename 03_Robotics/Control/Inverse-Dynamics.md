@@ -42,8 +42,8 @@ $$
 
 - [[03_Robotics/Control/Forward-Dynamics|Forward Dynamics]] — 给定动作预测下一状态
 - [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 使用逆动力学解码动作的世界模型
-- [[03_Robotics/Dynamics-Model|Dynamics Model]] — 环境动态建模
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 直接端到端映射的视觉-语言-动作策略
+- [[03_Robotics/Fundamentals/Dynamics-Model|Dynamics Model]] — 环境动态建模
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 直接端到端映射的视觉-语言-动作策略
 
 ## Papers
 

@@ -13,7 +13,6 @@ World Model 是具身智能中用于预测环境未来演化、支持规划与�
 
 - [[04_Embodied-AI/World-Model/World-Model|World Model (Ha & Schmidhuber)]] — VAE+MDN-RNN 经典架构
 - [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 强调时间因果性的世界模型
-- [[04_Embodied-AI/World-Model/causal-latent-world-model|Causal Latent World Model]] — 在语义特征空间的世界模型
 - [[04_Embodied-AI/World-Model/world-action-model|World Action Model]] — 联合预测视频与动作
 - [[04_Embodied-AI/World-Model/compositional-world-model|Compositional World Model]] — 解耦动力学与价值模型
 
@@ -23,3 +22,9 @@ World Model 是具身智能中用于预测环境未来演化、支持规划与�
 - [[04_Embodied-AI/World-Model/speculative-asynchronous-inference|Speculative Asynchronous Inference]]
 - [[04_Embodied-AI/World-Model/Noisy-History-Augmentation|Noisy History Augmentation]]
 - [[04_Embodied-AI/World-Model/privileged-foresight-distillation|Privileged Foresight Distillation]]
+
+## 相关入口
+
+- [[04_Embodied-AI/index|04_Embodied-AI]]
+- [[05_Papers/index|05_Papers]]
+- [[02_AI/Cognitive-Architecture/index|Cognitive Architecture]]

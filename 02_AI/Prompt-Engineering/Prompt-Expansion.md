@@ -35,11 +35,11 @@ Prompt Expansion 是 π0.7 的核心思想：通过为训练片段添加子任�
 
 ## Related Concepts
 
-- [[04_Embodied-AI/VLA/Diverse-Prompting-for-VLA|Diverse Prompting for VLA]] — 在 VLA 中的具体实现
-- [[04_Embodied-AI/VLA/Episode-Metadata-Conditioning|Episode Metadata Conditioning]] — 通过元数据扩展提示
-- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 通过图像扩展提示
-- [[02_AI/Classifier-Free-Guidance|Classifier-Free Guidance]] — 常与扩展提示结合使用
+- [[04_Embodied-AI/VLA/Diverse-Prompting-for-VLA|Diverse Prompting for VL[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 在 VLA 中的具体实现
+- [[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]]|Episode Metadata Conditionin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 通过元数据扩展提示
+- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditionin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 通过图像扩展提示
+- [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidanc[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 常与扩展提示结合使用
 
 ## Papers
 
-- [[05_Papers/articles/pi0-7|π0.7]] — 提出并验证了 VLA 中的多模态 prompt expansion
+- [[05_Papers/articles/pi0-7|π0.[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 提出并验证了 VLA 中的多模态 prompt expansion

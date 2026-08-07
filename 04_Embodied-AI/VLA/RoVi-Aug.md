@@ -23,7 +23,7 @@ H2R 和 RoVi-Aug 都关注通过数据增强提升机器人学习，但 H2R 侧�
 
 - [[04_Embodied-AI/Sim2Real/human-to-robot-data-augmentation|Human-to-Robot Data Augmentation]] — 人类视频到机器人数据的增强
 - [[04_Embodied-AI/Sim2Real/Domain-Randomization|Domain Randomization]] — 通过仿真域随机化提升泛化
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 数据增强可提升 VLA 视觉泛化
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 数据增强可提升 VLA 视觉泛化
 
 ## 来源
 

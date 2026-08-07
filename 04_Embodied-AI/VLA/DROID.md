@@ -24,7 +24,7 @@ created: 2026-07-31
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — DROID 是训练 VLA 的重要数据源
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — DROID 是训练 VLA 的重要数据源
 - [[04_Embodied-AI/VLA/ACT|ACT]] — 可在 DROID 上训练
 - [[04_Embodied-AI/Sim2Real/human-to-robot-data-augmentation|Human-to-Robot Data Augmentation]] — 与真实机器人数据互补
 

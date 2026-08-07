@@ -66,7 +66,7 @@ $$
 ## 与其他概念的关系
 
 - [[02_AI/LLM/Chain-of-Thought-Reasoning|Chain-of-Thought Reasoning]] — 单模型内部推理链
-- [[02_AI/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — 多模块认知架构
+- [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]|[[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — 多模块认知架构
 - [[02_AI/LLM/Mixture-of-Experts|Mixture of Experts]] — 异构专家协作的另一种形式
 
 ## 来源

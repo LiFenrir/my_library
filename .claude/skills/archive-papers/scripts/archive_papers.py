@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
-"""归档论文：扫描 Inbox、移动文件、更新 05_Papers/index.md。
+"""归档论文：扫描 Inbox、移动文件、重写图片路径、更新 05_Papers/index.md。
 
 由 archive-papers skill 调用，只做确定性文件操作，不做 LLM 推理。
+
+新架构（2026-08-06 起）：
+- 05_Papers/articles/<slug>.md    # 平铺，不再按 category 分子目录
+- 99_Attachments/papers/pdfs/<slug>.pdf
+- 99_Attachments/papers/images/<slug>/*
+- 05_Papers/notes/<slug>.md
+- 05_Papers/index.md             # 平铺链接列表，不再按分类
 """
 
 import argparse
@@ -31,16 +38,9 @@ PDFS_DIR = ATTACHMENTS_DIR / "pdfs"
 IMAGES_DIR = ATTACHMENTS_DIR / "images"
 INDEX_FILE = PAPERS_DIR / "index.md"
 
-# 分类英文目录 -> 中文标题（与 05_Papers/index.md 中的标题一致）
-CATEGORY_MAP = {
-    "vla": "VLA",
-    "world-model": "世界模型",
-    "world-action-model": "世界动作模型",
-    "embodied-ai": "具身智能",
-    "rl": "强化学习",
-}
-
 ARXIV_RE = re.compile(r"^arxiv-([\d\.]+)(?:\.pdf)?$", re.IGNORECASE)
+# 匹配 ![](images/xxx.jpg) 或 ![alt](images/xxx.jpg)
+IMG_RE = re.compile(r"!\[([^\]]*)\]\((images/[^)]+)\)")
 
 
 def slugify(title: str) -> str:
@@ -80,18 +80,26 @@ def scan_inbox():
     return candidates
 
 
-def move_paper(slug: str, category: str, source_pdf: Path | None, source_dir: Path | None):
-    """执行物理迁移。"""
-    if category not in CATEGORY_MAP:
-        raise ValueError(f"未知分类: {category}")
+def rewrite_image_paths(md_text: str, slug: str) -> str:
+    """将 full.md 中的 images/xxx 重写为指向 99_Attachments/papers/images/<slug>/ 的相对路径。"""
+    def repl(m):
+        alt = m.group(1)
+        filename = Path(m.group(2)).name
+        # 从 05_Papers/articles/<slug>.md 出发：../../99_Attachments/papers/images/<slug>/<filename>
+        new_path = f"../../99_Attachments/papers/images/{slug}/{filename}"
+        return f"![{alt}]({new_path})"
+    return IMG_RE.sub(repl, md_text)
 
-    target_article_dir = ARTICLES_DIR / category / slug
+
+def move_paper(slug: str, source_pdf: Path | None, source_dir: Path | None):
+    """执行物理迁移。"""
     target_images_dir = IMAGES_DIR / slug
     target_pdf = PDFS_DIR / f"{slug}.pdf"
+    target_md = ARTICLES_DIR / f"{slug}.md"
 
-    target_article_dir.mkdir(parents=True, exist_ok=True)
     target_images_dir.mkdir(parents=True, exist_ok=True)
     PDFS_DIR.mkdir(parents=True, exist_ok=True)
+    ARTICLES_DIR.mkdir(parents=True, exist_ok=True)
 
     if source_pdf and source_pdf.exists():
         shutil.move(str(source_pdf), str(target_pdf))
@@ -101,32 +109,37 @@ def move_paper(slug: str, category: str, source_pdf: Path | None, source_dir: Pa
             shutil.move(str(img), str(target_images_dir / img.name))
         source_md = source_dir / "full.md"
         if source_md.exists():
-            target_md = target_article_dir / f"{slug}.md"
-            shutil.move(str(source_md), str(target_md))
+            md_text = source_md.read_text(encoding="utf-8")
+            md_text = rewrite_image_paths(md_text, slug)
+            target_md.write_text(md_text, encoding="utf-8")
         # 清理空源目录
         shutil.rmtree(source_dir, ignore_errors=True)
 
     return {
-        "article_dir": str(target_article_dir),
+        "article": str(target_md),
         "images_dir": str(target_images_dir),
         "pdf": str(target_pdf),
     }
 
 
-def update_index(slug: str, category: str):
-    """更新 05_Papers/index.md：在对应分类下添加链接，更新统计数。"""
+def update_index(slug: str):
+    """更新 05_Papers/index.md：在平铺论文列表中按字母序添加链接。"""
     if not INDEX_FILE.exists():
         raise FileNotFoundError(f"index.md 不存在: {INDEX_FILE}")
 
     text = INDEX_FILE.read_text(encoding="utf-8")
-    section_title = CATEGORY_MAP[category]
-    link_line = f"- [[{slug}|{slug}]]"
+    link_line = f"- [[05_Papers/notes/{slug}|{slug}]]"
 
-    # 在对应分类区插入链接（按字母序）
-    pattern = rf"(### {re.escape(section_title)}\n\n)(.*?)(\n### |\n## |\n--- |\Z)"
-    match = re.search(pattern, text, re.DOTALL)
+    # 优先匹配 "## 论文列表" 后的平铺列表
+    section_pattern = r"(## 论文列表\n\n)(.*?)(\n## |\Z)"
+    match = re.search(section_pattern, text, re.DOTALL)
     if not match:
-        raise ValueError(f"未在 index.md 找到分类区: {section_title}")
+        # 兼容旧 index：匹配 "## 按方向浏览" 后的第一个分类区之前的区域，或 "## 目录"
+        section_pattern = r"(## 目录\n\n)(.*?)(\n## |\Z)"
+        match = re.search(section_pattern, text, re.DOTALL)
+
+    if not match:
+        raise ValueError("未在 index.md 找到 '## 论文列表' 或 '## 目录' 区")
 
     existing = match.group(2)
     lines = [ln for ln in existing.splitlines() if ln.strip()]
@@ -160,17 +173,15 @@ def main():
     parser = argparse.ArgumentParser(description="论文归档辅助脚本")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    p_scan = sub.add_parser("scan", help="扫描 Inbox 候选论文")
+    sub.add_parser("scan", help="扫描 Inbox 候选论文")
 
     p_move = sub.add_parser("move", help="移动文件到目标位置")
     p_move.add_argument("--slug", required=True)
-    p_move.add_argument("--category", required=True, choices=list(CATEGORY_MAP))
     p_move.add_argument("--pdf", help="源 PDF 路径")
     p_move.add_argument("--dir", help="源转换目录路径")
 
     p_index = sub.add_parser("update-index", help="更新 05_Papers/index.md")
     p_index.add_argument("--slug", required=True)
-    p_index.add_argument("--category", required=True, choices=list(CATEGORY_MAP))
 
     args = parser.parse_args()
 
@@ -182,12 +193,12 @@ def main():
     if args.cmd == "move":
         source_pdf = Path(args.pdf) if args.pdf else None
         source_dir = Path(args.dir) if args.dir else None
-        result = move_paper(args.slug, args.category, source_pdf, source_dir)
+        result = move_paper(args.slug, source_pdf, source_dir)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
 
     if args.cmd == "update-index":
-        result = update_index(args.slug, args.category)
+        result = update_index(args.slug)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return
 

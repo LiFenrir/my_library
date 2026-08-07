@@ -55,7 +55,7 @@ CoT 方式：
 
 - [[VLA-Architecture|VLA Architecture]] — CoT 作为生成/推理引擎的中间输出
 - [[Vision-Language-Action|Vision-Language-Action (VLA)]] — CoT 在具身智能中的应用范式
-- [[Mode-1-Mode-2-Reasoning|Mode 1 / Mode 2 Reasoning]] — 快速直觉与慢速推理的对比
+- [[02_AI/Cognitive-Architecture/Mode-1-Mode-2-Reasoning|Mode 1 / Mode 2 Reasoning]] — 快速直觉与慢速推理的对比
 
 ## Papers
 

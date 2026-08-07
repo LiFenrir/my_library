@@ -89,8 +89,8 @@ SAM 符合“在广泛数据上大规模训练、可适配多种下游任务”�
 
 - [[02_AI/VLM/promptable-segmentation|Promptable Segmentation]] — SAM 是该范式的代表实现
 - [[02_AI/VLM/Vision-Language-Model|Vision-Language Model]] — 文本提示依赖 VLM 的跨模态对齐
-- [[02_AI/model-in-the-loop-data-engine|Model-in-the-Loop Data Engine]] — SAM 的能力依托数据引擎生成的大规模掩码
-- [[02_AI/foundation-model|Foundation Model]] — SAM 是计算机视觉领域的基础模型尝试
+- [[02_AI/General/Model-in-the-Loop-Data-Engine|Model-in-the-Loop Data Engine]] — SAM 的能力依托数据引擎生成的大规模掩码
+- [[02_AI/General/Foundation-Model|Foundation Model]] — SAM 是计算机视觉领域的基础模型尝试
 
 ## 来源
 

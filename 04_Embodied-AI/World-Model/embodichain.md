@@ -48,10 +48,10 @@ created: 2026-07-30
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/World-Model/causal-latent-world-model|Causal Latent World Model]] — DexWorldModel 中 EmbodiChain 的载体
-- [[04_Embodied-AI/World-Model/World-Model|World Model]] — 生成式仿真的核心模型
-- [[04_Embodied-AI/Sim2Real/3d-gaussian-splatting-simulator|3D Gaussian Splatting Simulator for Robot Learning]] — 另一条高保真仿真路线
+- [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]|Causal Latent World Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — DexWorldModel 中 EmbodiChain 的载体
+- [[04_Embodied-AI/World-Model/World-Model|World Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 生成式仿真的核心模型
+- [[04_Embodied-AI/Sim2Real/3d-gaussian-splatting-simulator|3D Gaussian Splatting Simulator for Robot Learnin[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 另一条高保真仿真路线
 
 ## 来源
 
-- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Tasks]]
+- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Task[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]

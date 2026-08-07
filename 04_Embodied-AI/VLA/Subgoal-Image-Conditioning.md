@@ -41,13 +41,13 @@ World Model 通常基于大规模图像生成/编辑模型初始化，并在大�
 
 ## Related Concepts
 
-- [[Diverse-Prompting-for-VLA|Diverse Prompting for VLA]] — 子目标图像是其多模态提示组件之一
-- [[World-Model-for-Robotics|World Model for Robotics]] — 生成子目标图像的模型
-- [[Vision-Language-Action-Model|Vision-Language-Action Model]] — 接受子目标图像作为输入的机器人策略
-- [[04_Embodied-AI/VLA/episode-metadata-prompting|Episode Metadata Prompting]] — 常与子目标图像联合使用
-- [[02_AI/Classifier-Free-Guidance|Classifier-Free Guidance]] — 可用于增强子目标条件控制
+- [[Diverse-Prompting-for-VLA|Diverse Prompting for VL[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 子目标图像是其多模态提示组件之一
+- [[World-Model-for-Robotics|World Model for Robotic[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 生成子目标图像的模型
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Actio[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 接受子目标图像作为输入的机器人策略
+- [[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]]|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 常与子目标图像联合使用
+- [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidanc[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 可用于增强子目标条件控制
 
-## 补充：来自 [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|subgoal-image-conditioning（已合并）]]
+## 补充：来自 [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|subgoal-image-conditioning（已合并[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]]
 
 ### 生成子目标图像（π0.7 形式化）
 
@@ -74,4 +74,4 @@ $$
 
 ## Papers
 
-- [[05_Papers/articles/pi0-7|π0.7]] — 使用 BAGEL 初始化的轻量 world model 生成多视角子目标图像
+- [[05_Papers/articles/pi0-7|π0.[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 使用 BAGEL 初始化的轻量 world model 生成多视角子目标图像

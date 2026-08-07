@@ -55,4 +55,4 @@ VICReg 可用于训练 [[Joint-Embedding-Predictive-Architecture|JEPA]]：
 ## 来源
 
 - Bardes et al., 2021
-- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]，LeCun，2022
+- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]，LeCun，2022

@@ -71,13 +71,13 @@ $\epsilon$ 为区分“有进展”与“无进展”的阈值。该指示器用
 
 ## Related Concepts
 
-- [[Advantage-Weighted-Behavior-Cloning]] — SA 信号的下游用法
-- [[Advantage-Reward-Modeling]] — 另一种相对优势建模思路
-- [[RECAP]] — 使用值函数差分优势的 VLA 离线 RL 方法
-- [[Distributional-Inconsistencies-in-Robot-Learning]] — SA 在 χ0 中的定位
-- [[04_Embodied-AI/Robot-RL/long-horizon-manipulation|Long-Horizon-Manipulation]] — 问题背景
+- [[Advantage-Weighted-Behavior-Clonin[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — SA 信号的下游用法
+- [[Advantage-Reward-Modelin[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 另一种相对优势建模思路
+- [[RECA[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 使用值函数差分优势的 VLA 离线 RL 方法
+- [[Distributional-Inconsistencies-in-Robot-Learnin[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — SA 在 χ0 中的定位
+- [[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]]|Long-Horizon-Manipulatio[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 问题背景
 
 ## Papers
 
-- [[05_Papers/articles/chi0|χ0: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies]]
+- [[05_Papers/articles/chi0|χ0: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencie[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]]
 - Peng et al., "Advantage-weighted regression: Simple and scalable off-policy reinforcement learning", ICLR 2021

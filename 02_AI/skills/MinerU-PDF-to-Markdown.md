@@ -2,64 +2,176 @@
 title: MinerU PDF-to-Markdown Skill
 description: Claude Code skill，调用 MinerU 精准 API 将 PDF/图片/Office 文档转为 Markdown。
 tags: [claude-code, skill, mineru, pdf, markdown, obsidian]
+kind: skill
 created: 2026-07-22
 ---
 
-# MinerU PDF-to-Markdown Skill
+# MinerU PDF to Markdown
 
-Claude Code skill，调用 MinerU 精准解析 API 将 PDF、图片、Office 文档转换为 Markdown。
+Use the MinerU precise parsing API (`/api/v4/extract/task`) to convert documents into Markdown.
 
-## 触发方式
+## Supported inputs
 
-对 Claude 说：
+- PDF, images (png/jpg/jpeg/jp2/webp/gif/bmp), Doc, Docx, Ppt, PPTx, Xls, Xlsx
+- Single file via URL
+- Single local file via signed upload
+- Batch URLs or local files
 
-- "把这份 PDF 转成 Markdown"
-- "用 MinerU 解析这个论文"
-- "批量把这几个 PDF 转成 Markdown，用于 RAG"
+## Token
 
-## 文件位置
+Read the MinerU API token from `/home/kemove/.mineru/config`.
 
-- 项目内 Skill 包：`.claude/skills/mineru-pdf-to-markdown.skill`
-- 全局 Skill 包（旧位置）：`~/.claude/skills/mineru-pdf-to-markdown.skill`
-- Token：`~/.mineru/config`
-
-## 支持的输入
-
-- PDF、图片（png/jpg/jpeg/jp2/webp/gif/bmp）
-- Word（doc/docx）、PPT（ppt/pptx）、Excel（xls/xlsx）
-- 单文件 URL 或本地文件
-- 批量 URL 或本地文件
-
-## 输出结构
-
-对 `paper.pdf` 默认生成目录 `paper/`：
+File format:
 
 ```
-paper/
-├── full.md          # Markdown 文本
-├── full.html        # HTML 完整渲染版
-├── full.tex         # LaTeX 版
-├── images/          # 论文图片
-├── layout.json      # 版面分析
+token=<JWT token string>
+```
+
+Parse the file to extract the token value, then use it in the `Authorization: Bearer <token>` header.
+
+## Model version selection
+
+The `model_version` parameter controls parsing quality and speed.
+
+- `vlm`（默认）: recommended for complex documents, scanned pages, mixed layouts, tables, and formulas. Slower but more accurate.
+- `pipeline`: faster, good for clean, standard electronic PDFs.
+- `MinerU-HTML`: required when the input is an HTML file.
+
+When the user does not specify a model, default to `vlm` unless the file is a clean text PDF and speed matters more.
+
+## Workflow
+
+1. **Identify the input**
+   - If the user provides a URL, use the URL endpoint.
+   - If the user provides a local file path, use the file upload endpoint.
+   - If the user provides multiple files, use the batch endpoints.
+2. **Choose the model version** (default `vlm`).
+3. **Submit the task** and get `task_id` (or `batch_id`).
+4. **Poll** the result endpoint until `state` is `done` or `failed`.
+5. **Download the ZIP** from `full_zip_url`.
+6. **Extract the entire ZIP**, not just `full.md`. The ZIP also contains:
+   - `images/`: extracted images referenced by `full.md`
+   - `full.md`: primary Markdown output
+   - `content_list.json` / `layout.json`: structured content and layout metadata
+7. **Save** `full.md` to the location the user requested, preserving the relative `images/` directory so image links work.
+
+## Output structure
+
+For a single input, produce a directory like:
+
+```
+<input_stem>/
+├── full.md          # Markdown text with tables preserved as Markdown tables
+├── full.html        # HTML output if extra_formats includes html
+├── full.tex         # LaTeX output if extra_formats includes latex
+├── images/          # images referenced by full.md
+├── layout.json      # layout analysis data
 └── content_list.json
 ```
 
-## 关键特性
+If the user asks for a specific `.md` file path, place `full.md` at that path and keep `images/` next to it so `![](images/...)` references resolve.
 
-1. **图片保留**：解压完整 ZIP，`full.md` 中的 `![](images/...)` 引用有效。
-2. **表格增强**：用 `full.html` 中的 `<table>` 生成 Markdown 表格，替换 `full.md` 中的纯文本块。
-3. **公式保留**：Markdown 中以 LaTeX 形式保留；复杂公式建议直接查看 `full.html`。
+When no output path is given, create a directory named after the input file stem (e.g. `paper.pdf` → `paper/`) and put all outputs there.
 
-## Obsidian 使用建议
+## API endpoints
 
-Obsidian 表格单元格不支持块级 `$$...$$` 公式或复杂 LaTeX（如 `\frac`、多行结构）。
+### Single URL
 
-- 用 `full.md` 做文本搜索、编辑、简单内容
-- 用 `full.html` 查看完整表格和公式渲染
+```
+POST https://mineru.net/api/v4/extract/task
+Authorization: Bearer <token>
+Content-Type: application/json
 
-## 命令行脚本
+{
+  "url": "https://example.com/file.pdf",
+  "model_version": "vlm"
+}
+```
 
-Skill 内部调用 `scripts/mineru_convert.py`：
+### Single local file
+
+1. Request upload URLs:
+
+```
+POST https://mineru.net/api/v4/file-urls/batch
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "files": [{"name": "file.pdf"}],
+  "model_version": "vlm"
+}
+```
+
+2. PUT the file bytes to the returned `file_urls[0]`.
+3. Poll `https://mineru.net/api/v4/extract-results/batch/{batch_id}`.
+
+### Batch URLs
+
+```
+POST https://mineru.net/api/v4/extract/task/batch
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "files": [{"url": "https://example.com/a.pdf"}, {"url": "https://example.com/b.pdf"}],
+  "model_version": "vlm"
+}
+```
+
+### Poll single task
+
+```
+GET https://mineru.net/api/v4/extract/task/{task_id}
+Authorization: Bearer <token>
+```
+
+### Poll batch
+
+```
+GET https://mineru.net/api/v4/extract-results/batch/{batch_id}
+Authorization: Bearer <token>
+```
+
+## Common parameters
+
+- `model_version`: `pipeline` | `vlm` | `MinerU-HTML`
+- `is_ocr`: `true`/`false` (default `false`)
+- `enable_formula`: `true`/`false` (default `true`)
+- `enable_table`: `true`/`false` (default `true`)
+- `language`: default `ch`, see language reference in the API docs
+- `page_ranges`: e.g. `"1-5,8,10-12"`
+- `extra_formats`: e.g. `["docx", "html"]` — useful when the user wants better table/formula rendering than plain Markdown provides
+
+## Images, tables, and formulas
+
+- **Images**: stored in `images/` inside the result ZIP. `full.md` references them with `![](images/...)`. Always extract the entire ZIP so these links remain valid.
+- **Tables**: the helper script converts HTML tables into Markdown tables and replaces the corresponding plain-text blocks in `full.md`. To guarantee table structure, use `extra_formats: ["html"]` as well.
+- **Formulas**: written as LaTeX in `full.md`. Enable `enable_formula: true` (default). For Word/Office-style equation rendering, export HTML or DOCX.
+
+### Obsidian users
+
+Obsidian renders Markdown tables, but table cells cannot contain block-level `$$...$$` formulas or complex LaTeX such as `\frac`, `\text{...}`, or multi-line expressions. For documents with complex tables/formulas, always export HTML (`extra_formats: ["html"]`) and open `full.html` in a browser or embed it as an iframe. Use `full.md` for text search, editing, and simple content; use `full.html` for faithful rendering of tables and formulas.
+
+## Result handling
+
+When `state == "done"`, the response contains `full_zip_url`. Download and unzip the entire archive.
+
+If `state == "failed"`, surface `err_msg` to the user and stop.
+
+## Errors
+
+Common error codes:
+
+- `A0202`: Token error
+- `A0211`: Token expired
+- `-60005`: File exceeds 200MB
+- `-60006`: File exceeds 200 pages
+- `-60018`: Daily quota exhausted
+
+## Helper script
+
+For deterministic execution, call `scripts/mineru_convert.py`:
 
 ```bash
 python scripts/mineru_convert.py <input> [output.md or output_dir] \
@@ -67,27 +179,15 @@ python scripts/mineru_convert.py <input> [output.md or output_dir] \
   [--ocr] [--no-table] [--no-formula] \
   [--language ch] \
   [--page-ranges "1-5,8"] \
-  [--extra-formats html,latex]
+  [--extra-formats html,docx]
 ```
 
-常用示例：
+The script reads the token automatically, handles upload/polling/zip extraction, converts HTML tables into Markdown tables, preserves the `images/` directory, and writes the Markdown file.
 
-```bash
-# 本地 PDF，输出到同名目录，同时导出 HTML
-python scripts/mineru_convert.py paper.pdf --model vlm --extra-formats html,latex
+## Output
 
-# 指定输出 Markdown 路径
-python scripts/mineru_convert.py paper.pdf output/paper.md --extra-formats html
-```
+When no output path is given, create a directory named after the input file stem (e.g. `paper.pdf` → `paper/`) and put all outputs there.
 
-## 限制
+If the user requested a specific output path ending in `.md`, use that path for `full.md`. Otherwise save `full.md` inside the auto-created directory.
 
-- 文件大小 ≤ 200MB，页数 ≤ 200 页
-- 需要 MinerU API token
-- URL 端点偶尔 pending 超时，本地文件上传更稳定
-
-## 相关
-
-- [[00_Inbox/index|00_Inbox]]
-- [[05_Papers/index|05_Papers]]
-- [[02_AI/skills/Claude-Code-Skills|Claude Code Skills]]
+Always keep the `images/` directory next to `full.md` so image references resolve.

@@ -1,0 +1,5 @@
+/* 文件列表中隐藏 node_modules（依赖目录，非知识内容） */
+.nav-folder[data-path="node_modules"],
+.nav-folder:has(> .nav-folder-title[data-path="node_modules"]) {
+  display: none !important;
+}

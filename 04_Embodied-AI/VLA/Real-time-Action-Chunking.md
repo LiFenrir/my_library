@@ -37,7 +37,7 @@ Real-time Action Chunking（RTC）是一种使**动作块策略在存在推理�
 
 - [[Action-Chunking|Action Chunking]] — RTC 的基础技术
 - [[Action-Expert|Action Expert]] — 生成动作块的模块
-- [[Vision-Language-Action-Model|Vision-Language-Action Model]] — 使用 RTC 的机器人策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — 使用 RTC 的机器人策略
 
 ## 补充：来自 [[04_Embodied-AI/VLA/Real-time-Action-Chunking|real-time-action-chunking（已合并）]]
 

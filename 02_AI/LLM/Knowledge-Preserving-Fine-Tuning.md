@@ -74,11 +74,16 @@ L_kp = KL(p_θ0(·|I, x) || p_θ(·|I, x))
 
 ## Related Concepts
 
-- [[Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 需要模型同时保留动作与语义能力
-- [[Edge-VLA-Inference|Edge VLA Inference]] — 紧凑模型专业化的边缘推理场景
-- [[Catastrophic-Forgetting|Catastrophic Forgetting]] — 通用概念（待补充）
+- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 需要模型同时保留动作与语义能力
+- [[04_Embodied-AI/VLA/Edge-VLA-Inference|Edge VLA Inference]] — 紧凑模型专业化的边缘推理场景
+- [[01_Fundamentals/ML/Catastrophic-Forgetting|Catastrophic Forgetting]] — 通用概念
 - [[02_AI/LLM/index|LLM]] — 大语言模型 fine-tuning 基础
+
+## Related Entries
+
+- 主归属：[[02_AI/LLM/index|LLM]]
+- 在 VLA 中的角色：[[04_Embodied-AI/VLA/index|VLA]]
 
 ## Papers
 
-- [[05_Papers/articles/litevla-h|LiteVLA-H]] — 本笔记主要知识来源
+- [[05_Papers/notes/litevla-h|LiteVLA-H]] — 本笔记主要知识来源

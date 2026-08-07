@@ -21,9 +21,9 @@ Diffusion Policy 的动作生成思想被后续 VLA 和机器人策略学习广�
 
 ## 与其他概念的关系
 
-- [[02_AI/Flow-Matching|Flow Matching]] — 与扩散模型相关的生成方法
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — 与扩散模型相关的生成方法
 - [[01_Fundamentals/ML/Imitation-Learning|Imitation Learning]] — Diffusion Policy 的训练范式
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 动作生成可与 VLA 架构结合
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 动作生成可与 VLA 架构结合
 
 ## 来源
 

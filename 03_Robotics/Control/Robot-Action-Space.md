@@ -34,7 +34,7 @@ Robot Action Space 定义了机器人策略输出的**控制信号形式**，常
 ## Related Concepts
 
 - [[03_Robotics/Control/Robot-Observation-Space|Robot Observation Space]] — 策略输入的状态表示
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 输出机器人动作的策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 输出机器人动作的策略
 - [[04_Embodied-AI/VLA/Cross-embodiment-Generalization|Cross-embodiment Generalization]] — 动作空间选择影响跨形态迁移
 
 ## Papers

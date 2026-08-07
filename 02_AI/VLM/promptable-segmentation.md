@@ -35,10 +35,10 @@ created: 2026-07-29
 - [[02_AI/VLM/Vision-Language-Model|Vision-Language Model]] — 文本提示分割需要语言理解
 - [[02_AI/VLM/segment-anything-model|Segment Anything Model]] — promptable segmentation 的代表实现
 - [[02_AI/VLM/grounded-sam|Grounded SAM]] — 文本提示分割的组装式实现
-- [[02_AI/model-in-the-loop-data-engine|Model-in-the-Loop Data Engine]] — 为 promptable segmentation 模型构建大规模训练数据
+- [[02_AI/General/Model-in-the-Loop-Data-Engine|Model-in-the-Loop Data Engine]] — 为 promptable segmentation 模型构建大规模训练数据
 - [[03_Robotics/Perception/index|Robot Perception]] — 分割是机器人感知的基础能力
 - [[04_Embodied-AI/Sim2Real/human-to-robot-data-augmentation|Human-to-Robot Data Augmentation]] — SAM 可用于手部分割
-- [[02_AI/foundation-model|Foundation Model]] — promptable segmentation 是构建 CV 基础模型的任务范式
+- [[02_AI/General/Foundation-Model|Foundation Model]] — promptable segmentation 是构建 CV 基础模型的任务范式
 
 ## 补充：来自 [[05_Papers/articles/segment-anything|Segment Anything]]
 

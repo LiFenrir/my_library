@@ -48,13 +48,13 @@ $$
 
 ## 优缺点
 
-- **优点**：可建模复杂多峰分布；有成熟的条件化与引导技术（如 [[02_AI/Classifier-Free-Guidance|Classifier-Free Guidance]]）；可利用大规模无标注数据预训练
+- **优点**：可建模复杂多峰分布；有成熟的条件化与引导技术（如 [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidance]]）；可利用大规模无标注数据预训练
 - **缺点/局限**：采样需要多步迭代，推理慢；对噪声 schedule 敏感；长程一致性仍具挑战
 
 ## 与其他概念的关系
 
-- [[02_AI/Flow-Matching|Flow Matching]] — 与扩散模型关系密切的连续生成框架
-- [[02_AI/Classifier-Free-Guidance|Classifier-Free Guidance]] — 扩散模型条件生成的常用技术
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — 与扩散模型关系密切的连续生成框架
+- [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidance]] — 扩散模型条件生成的常用技术
 - [[04_Embodied-AI/World-Model/latent-frame-injection|Latent Frame Injection]] — 在潜在扩散序列中注入新模态的机器人策略方法
 - [[04_Embodied-AI/World-Model/video-foundation-model-for-robotics|Video Foundation Model for Robotics]] — 视频扩散模型在机器人中的具体应用
 

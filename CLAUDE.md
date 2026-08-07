@@ -17,7 +17,7 @@
 
 1. **目录只做粗分类，知识靠链接组织**
    - 不追求一次性完美分类。
-   - 优先用 `[[02_AI/Obsidian-Bidirectional-Links|双向链接]]` 和 `#标签` 建立知识网络。
+   - 优先用 `[[02_AI/General/Obsidian-Bidirectional-Links|双向链接]]` 和 `#标签` 建立知识网络。
 
 2. **新内容先入 Inbox，再整理**
    - 任何新笔记先放入 `00_Inbox/`。

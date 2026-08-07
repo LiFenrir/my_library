@@ -586,7 +586,7 @@ def process_note(src_name, meta):
     body = re.sub(r'\]\((?:\.\./)+[\w\-]+/([^/]+\.pdf)\)', rf'](99_Attachments/papers/pdfs/\1)', body)
     # 添加原文链接
     direction = meta["direction"]
-    footer = f"\n\n## 原文\n\n[[05_Papers/articles/{direction}/{slug}/{slug}]]\n"
+    footer = f"\n\n## 原文\n\n[[05_Papers/articles/{direction}/{slug}/{slug}|{direction}/{slug}/{slug}]]\n"
     new_fm = (
         "---\n"
         f'title: "{title}"\n'

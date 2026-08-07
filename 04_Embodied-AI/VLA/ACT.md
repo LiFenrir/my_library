@@ -23,7 +23,7 @@ ACT 是实现动作块预测的代表性方法之一，影响了后续 VLA 中�
 
 - [[04_Embodied-AI/VLA/Action-Chunking|Action Chunking]] — ACT 的核心机制
 - [[01_Fundamentals/ML/Imitation-Learning|Imitation Learning]] — ACT 的训练范式
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — ACT 可视为早期 VLA 风格的动作生成方法
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — ACT 可视为早期 VLA 风格的动作生成方法
 
 ## 来源
 

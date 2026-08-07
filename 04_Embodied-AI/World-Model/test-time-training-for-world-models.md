@@ -54,10 +54,10 @@ $$
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/World-Model/causal-latent-world-model|Causal Latent World Model]] — DexWorldModel 的具体实现
-- [[04_Embodied-AI/World-Model/World-Model|World Model]] — 应用场景
-- [[01_Fundamentals/ML/Catastrophic-Forgetting|Catastrophic Forgetting]] — TTT 需在单 episode 内避免覆盖重要记忆
+- [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]|Causal Latent World Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — DexWorldModel 的具体实现
+- [[04_Embodied-AI/World-Model/World-Model|World Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 应用场景
+- [[01_Fundamentals/ML/Catastrophic-Forgetting|Catastrophic Forgettin[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — TTT 需在单 episode 内避免覆盖重要记忆
 
 ## 来源
 
-- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Tasks]]
+- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Task[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]

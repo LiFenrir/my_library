@@ -31,7 +31,7 @@ $$
 ## 与其他概念的关系
 
 - [[02_AI/VLM/Vision-Language-Model|Vision-Language Model]] — Cross-Modal Attention 的主要应用
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 三模态融合
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 三模态融合
 - [[02_AI/LLM/Mixture-of-Transformers|Mixture of Transformers]] — 可用 Cross-Modal Attention 实现模态间信息交换
 
 ## 来源

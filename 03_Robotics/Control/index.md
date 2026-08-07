@@ -16,4 +16,10 @@ created: 2026-07-30
 - [[03_Robotics/Control/Outer-Loop-Guidance|Outer-Loop Guidance]] — 外环引导降低实时控制压力
 - [[03_Robotics/Control/Inverse-Dynamics|Inverse Dynamics]] — 从状态转移反推动作
 - [[03_Robotics/Control/Forward-Dynamics|Forward Dynamics]] — 从动作预测状态转移
-- [[03_Robotics/Control/Model-Predictive-Control|Model-Predictive Control]] — 基于模型的预测控制
+- [[03_Robotics/Fundamentals/Dynamics-Model|Dynamics-Model]] — 机器人动力学模型
+
+## 相关入口
+
+- [[03_Robotics/index|03_Robotics]]
+- [[04_Embodied-AI/VLA/index|VLA]] — 将 VLA 作为控制外环
+- [[03_Robotics/Planning/Model-Predictive-Control|Model-Predictive Control]] — 基于模型的预测控制

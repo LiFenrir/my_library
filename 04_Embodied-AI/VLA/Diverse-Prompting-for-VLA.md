@@ -42,11 +42,11 @@ Diverse Prompting for VLA 指在 VLA 的训练与测试中引入**多种模态�
 
 ## Related Concepts
 
-- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 使用图像作为提示
-- [[04_Embodied-AI/VLA/Episode-Metadata-Conditioning|Episode Metadata Conditioning]] — 使用元数据作为提示
-- [[02_AI/Prompt-Engineering/Prompt-Expansion|Prompt Expansion]] — 提示扩展的通用概念
-- [[02_AI/Classifier-Free-Guidance|Classifier-Free Guidance]] — 可应用于提示组件的引导技术
+- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditionin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 使用图像作为提示
+- [[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]]|Episode Metadata Conditionin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 使用元数据作为提示
+- [[02_AI/Prompt-Engineering/Prompt-Expansion|Prompt Expansio[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 提示扩展的通用概念
+- [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidanc[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 可应用于提示组件的引导技术
 
 ## Papers
 
-- [[05_Papers/articles/pi0-7|π0.7]] — 提出并验证了多模态 diverse prompting 在 VLA 中的有效性
+- [[05_Papers/articles/pi0-7|π0.[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Promptin[[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — 提出并验证了多模态 diverse prompting 在 VLA 中的有效性

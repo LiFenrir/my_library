@@ -47,4 +47,4 @@ created: 2026-07-28
 - [[RECAP]] — 面向 VLA 的迭代离线 RL 方法
 - [[Advantage-Conditioning]] — RECAP 使用的策略提取技术
 - [[Offline-Reinforcement-Learning]] — 通用离线 RL 基础
-- [[Vision-Language-Action-Model]] — 离线 RL 的模型对象
+- [[[[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — 离线 RL 的模型对象

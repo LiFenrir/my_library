@@ -54,8 +54,8 @@ x_T ~ N(0, I) → 逐步去噪 → x_0 (数据)
 
 ## Related Concepts
 
-- [[Flow-Matching|Flow Matching]] — 另一种连续生成路径学习方法
-- [[Classifier-Free-Guidance|Classifier-Free Guidance]] — 扩散/流模型中常用的条件控制技术
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — 另一种连续生成路径学习方法
+- [[02_AI/Generative-Models/Classifier-Free-Guidance|Classifier-Free Guidance]] — 扩散/流模型中常用的条件控制技术
 - [[Action-Tokenization|Action Tokenization]] — 与 DiT 相对的离散动作表示方法
 - [[VLA-Architecture|VLA Architecture]] — DiT 在 VLA 动作生成模块中的位置
 

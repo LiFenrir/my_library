@@ -30,10 +30,11 @@ created: 2026-07-29
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — H2R 可增强 VLA 的视觉预训练
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — H2R 可增强 VLA 的视觉预训练
+- [[04_Embodied-AI/Data-and-Evaluation/Ego-to-Robot-Synthesis|Ego-to-Robot Synthesis]] — 更通用的 ego-to-robot 数据合成范式
 - [[02_AI/VLM/segment-anything-model|Segment Anything Model]] — H2R 使用 SAM 进行手部分割
 - [[04_Embodied-AI/Sim2Real/Domain-Randomization|Domain Randomization]] — 同属 sim-to-real 数据增强
 
 ## 来源
 
-- [[05_Papers/articles/h2r|H2R: A Human-to-Robot Data Augmentation for Robot Pre-training from Videos]]
+- [[05_Papers/notes/h2r|H2R: A Human-to-Robot Data Augmentation for Robot Pre-training from Videos]]

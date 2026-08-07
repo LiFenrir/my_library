@@ -1,7 +1,7 @@
 ---
 layout: page
-title: AI 杂记
+title: AI 之旅
 sidebar: false
 ---
 
-<EntryCards section="ai" />
+<PapersIndex section="ai" />

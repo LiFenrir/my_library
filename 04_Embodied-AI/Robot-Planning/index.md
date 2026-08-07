@@ -12,10 +12,15 @@ created: 2026-07-30
 ## 核心概念
 
 - [[04_Embodied-AI/Robot-Planning/Hierarchical-Planning|Hierarchical Planning]] — 分层任务分解
-- [[03_Robotics/Control/Model-Predictive-Control|Model-Predictive Control]] — 基于前向模型的滚动优化
+- [[03_Robotics/Planning/Model-Predictive-Control|Model-Predictive Control]] — 基于前向模型的滚动优化
 - [[04_Embodied-AI/World-Model/model-based-planning-for-robotics|Model-Based Planning for Robotics]] — 用学习世界模型进行规划
 
 ## 与 RL 的关系
 
-- [[04_Embodied-AI/Robot-RL/long-horizon-manipulation|Long-Horizon Manipulation]] — 规划与长程操作结合
+- [[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 规划与长程操作结合
 - [[04_Embodied-AI/Robot-RL/self-improving-robot-policy|Self-Improving Robot Policy]] — 在世界模型中规划与学习
+
+## 相关入口
+
+- [[04_Embodied-AI/index|04_Embodied-AI]]
+- [[03_Robotics/index|03_Robotics]]

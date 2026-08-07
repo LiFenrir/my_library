@@ -69,7 +69,7 @@ created: 2026-07-30
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 基于 VLM 的机器人策略范式
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 基于 VLM 的机器人策略范式
 - [[04_Embodied-AI/World-Model/latent-frame-injection|Latent Frame Injection]] — 将视频模型适配为策略的具体机制
 - [[04_Embodied-AI/World-Model/World-Model|World Model]] — 视频基础模型可作为世界模型使用
 - [[04_Embodied-AI/World-Model/model-based-planning-for-robotics|Model-Based Planning for Robotics]] — 利用视频模型进行规划

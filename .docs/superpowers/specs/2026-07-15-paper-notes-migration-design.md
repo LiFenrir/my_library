@@ -133,7 +133,7 @@ created: 2026-07-15
 - 笔记中 `![[attachments/xxx.jpg]]` 改为 `![[99_Attachments/papers/images/<slug>/xxx.jpg]]`
 - 笔记中相对路径或绝对路径指向 PDF 的，改为指向 `99_Attachments/papers/pdfs/<slug>.pdf`
 - 笔记中引用其他论文的 `[[旧文件名]]` 链接，更新为新 slug
-- 在 notes 末尾增加「原文」链接：`[[05_Papers/articles/<方向>/<slug>/<slug>]]`
+- 在 notes 末尾增加「原文」链接：`[[05_Papers/articles/<方向>/<slug>/<slug>|<方向>/<slug>/<slug>]]`
 
 ## 重复与翻译文件处理
 

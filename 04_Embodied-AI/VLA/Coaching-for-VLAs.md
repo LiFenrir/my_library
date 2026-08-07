@@ -39,7 +39,7 @@ Coaching for VLAs 是一种通过**人类逐步语言指令**教授 VLA 新任�
 
 - [[04_Embodied-AI/VLA/Diverse-Prompting-for-VLA|Diverse Prompting for VLA]] — 子任务指令是 diverse prompting 的组成部分
 - [[04_Embodied-AI/VLA/Compositional-Task-Generalization|Compositional Task Generalization]] — Coaching 是实现组合泛化的途径之一
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 被辅导的对象
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 被辅导的对象
 
 ## Papers
 

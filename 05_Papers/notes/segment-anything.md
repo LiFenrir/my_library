@@ -100,7 +100,7 @@ Lightweight Mask Decoder (2 层 Transformer)
 - **与 VLA 结合**: 作为视觉 grounding 的前置工具，将语言/点/框指令转化为 mask。
 
 ## 相关概念
-- [[foundation-model]]
+- [[02_AI/General/Foundation-Model]]
 - [[computer-vision]]
 - [[image-segmentation]]
 - [[prompt-engineering]]

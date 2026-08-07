@@ -25,7 +25,7 @@ created: 2026-07-31
 
 - [[04_Embodied-AI/Sim2Real/human-to-robot-data-augmentation|Human-to-Robot Data Augmentation]] — 类似思路：利用人类视频辅助机器人学习
 - [[01_Fundamentals/ML/Self-Supervised-Learning|Self-Supervised Learning]] — R3M 使用自监督预训练
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — R3M 表示可用于 VLA 视觉编码器
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — R3M 表示可用于 VLA 视觉编码器
 
 ## 来源
 

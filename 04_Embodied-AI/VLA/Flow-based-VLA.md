@@ -35,8 +35,8 @@ Flow-based VLA 是一类使用**流匹配（Flow Matching）**作为动作生成
 
 ## Related Concepts
 
-- [[02_AI/Flow-Matching|Flow Matching]] — 通用流匹配方法
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — VLA 通用范式
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — 通用流匹配方法
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — VLA 通用范式
 - [[04_Embodied-AI/VLA/Action-Expert|Action Expert]] — 负责动作生成的子网络
 - [[04_Embodied-AI/VLA/Knowledge-Insulation|Knowledge Insulation]] — 保护 VLM backbone 的训练技巧
 

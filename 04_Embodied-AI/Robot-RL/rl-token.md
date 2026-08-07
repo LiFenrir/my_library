@@ -52,7 +52,7 @@ $$
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — RL Token 的信息来源
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — RL Token 的信息来源
 - [[04_Embodied-AI/Robot-RL/RECAP|RECAP]] — 另一种 VLA + RL 的训练框架
 - [[04_Embodied-AI/Robot-RL/Advantage-Conditioning|Advantage Conditioning]] — 不同方式的 VLA + RL
 

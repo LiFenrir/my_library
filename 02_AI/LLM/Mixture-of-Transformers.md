@@ -56,7 +56,7 @@ Motus 用三个专家：理解专家（understanding）、视频生成专家（v
 
 - [[Mixture-of-Experts]] — 在专家子网络级别稀疏扩展容量的相关架构
 - [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 使用 MoT 统一视频-动作自回归建模的机器人世界模型
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 多模态输入输出策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 多模态输入输出策略
 - [[02_AI/VLM/Cross-Modal-Attention|Cross-Modal Attention]] — 跨模态注意力机制
 
 ## Papers

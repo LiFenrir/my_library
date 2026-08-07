@@ -1,20 +1,19 @@
 ---
 name: archive-papers
-description: 将 00_Inbox 中的论文自动归档到 05_Papers：MinerU 转换、分类推断、slug 生成、笔记生成、索引更新。
+description: 将 00_Inbox 中的论文自动归档到 05_Papers：MinerU 转换、slug 生成、笔记生成、图片路径重写、索引更新。
 compatibility: 依赖项目结构 00_Inbox/、05_Papers/、99_Attachments/papers/；需要 MinerU API token 或已转换的 full.md 目录。
 ---
 
 # Archive Papers
 
-把 `00_Inbox/` 中的论文迁移到 `05_Papers/` 规范目录，并生成结构化笔记、更新索引。
+把 `00_Inbox/` 中的论文迁移到 `05_Papers/` 规范目录，并生成结构化笔记、重写图片路径、更新索引。
 
 ## 触发条件
 
 用户输入 `/archive-papers` 时调用。可选参数：
 
 - `--dry-run`：只预览，不移动文件。
-- `--auto`：自动推断分类/slug，不逐篇询问。
-- `--category <vla|world-model|world-action-model|embodied-ai|rl>`：强制指定分类。
+- `--auto`：自动推断 slug，不逐篇询问。
 - `--slug <slug>`：强制指定 slug（仅单篇时有效）。
 
 ## 归档目标结构
@@ -25,10 +24,10 @@ library/
 │   └── arxiv-XXXX.XXXXX.pdf          # 源，归档后删除
 ├── 05_Papers/
 │   ├── articles/
-│   │   └── <slug>.md                    # MinerU 原文，标题优化过
+│   │   └── <slug>.md                    # MinerU 原文，平铺，图片路径已重写
 │   ├── notes/
 │   │   └── <slug>.md                    # 人工整理笔记
-│   └── index.md                         # 分类入口 + 统计数
+│   └── index.md                         # 平铺论文列表 + 统计数
 └── 99_Attachments/papers/
     ├── pdfs/<slug>.pdf
     └── images/<slug>/*.jpg
@@ -66,19 +65,11 @@ python3 .claude/skills/archive-papers/scripts/archive_papers.py scan
 - 摘要
 - 核心方法、实验设置、主要结果、局限
 
-基于标题和摘要推断分类：
-- `vla`：Vision-Language-Action 模型、机器人策略
-- `world-model`：世界模型、视频生成、环境动力学
-- `world-action-model`：世界动作模型、动作生成
-- `embodied-ai`：具身智能、机器人学习、操作
-- `rl`：强化学习、RL 算法
-
 生成 slug：
-- 优先使用 arXiv ID（如 `2605.29710` -> `phail` 不合适，应使用标题关键词）。
 - 规则：小写、英文单词用连字符、去掉冠词/介词、长度 ≤ 40 字符。
 - 例如标题 "PhAIL: A Real-Robot VLA Benchmark and Distributional Methodology" -> `phail`。
 
-若未加 `--auto`，向用户确认分类和 slug。
+若未加 `--auto`，向用户确认 slug。
 
 ### 4. 生成笔记
 
@@ -88,7 +79,7 @@ python3 .claude/skills/archive-papers/scripts/archive_papers.py scan
 ---
 title: "<论文标题>"
 description: "<一句话概括>"
-tags: ["<分类标签>", "<关键词>", "..."]
+tags: ["<关键词>", ...]
 created: <YYYY-MM-DD>
 ---
 
@@ -100,7 +91,7 @@ created: <YYYY-MM-DD>
 - **机构**: ...
 - **链接**: [arXiv:XXXX.XXXXX](https://arxiv.org/abs/XXXX.XXXXX)
 - **发表**: ...
-- **原文**: [[05_Papers/articles/<slug>.md|<slug>.md]]
+- **原文**: [[05_Papers/articles/<slug>.md|<slug>]]
 - **PDF**: [[99_Attachments/papers/pdfs/<slug>.pdf|<slug>.pdf]]
 
 ## 研究背景
@@ -139,15 +130,20 @@ created: <YYYY-MM-DD>
 
 ```bash
 python3 .claude/skills/archive-papers/scripts/archive_papers.py move \
-  --slug <slug> --category <category> \
-  --pdf <源pdf路径> --dir <源目录路径>
+  --slug <slug> --pdf <源pdf路径> --dir <源目录路径>
 ```
+
+该脚本会：
+- 移动 PDF 到 `99_Attachments/papers/pdfs/<slug>.pdf`
+- 移动图片到 `99_Attachments/papers/images/<slug>/`
+- 将 `full.md` 写入 `05_Papers/articles/<slug>.md`，并将其中 `images/xxx` 重写为 `../../99_Attachments/papers/images/<slug>/xxx`
+- 清理空源目录
 
 然后更新索引：
 
 ```bash
 python3 .claude/skills/archive-papers/scripts/archive_papers.py update-index \
-  --slug <slug> --category <category>
+  --slug <slug>
 ```
 
 ### 6. 清理
@@ -157,7 +153,6 @@ python3 .claude/skills/archive-papers/scripts/archive_papers.py update-index \
 ## 错误处理
 
 - 若 Inbox 为空，直接告知用户。
-- 若分类不确定，默认归入 `embodied-ai`，并提示用户后续手动调整。
 - 若 slug 冲突，追加短后缀（如 `-2`）并提示用户。
 - 若 MinerU 转换失败，保留 PDF 在 Inbox，报告失败项。
 
@@ -167,9 +162,9 @@ python3 .claude/skills/archive-papers/scripts/archive_papers.py update-index \
 
 ```
 已归档 1 篇论文：
-- phail (vla) -> 05_Papers/notes/phail.md
-- 原文 -> 05_Papers/articles/phail
-- PDF -> 99_Attachments/papers/pdfs/phail.pdf
-- 图片 -> 99_Attachments/papers/images/phail/
+- ego2robot -> 05_Papers/notes/ego2robot.md
+- 原文 -> 05_Papers/articles/ego2robot.md
+- PDF -> 99_Attachments/papers/pdfs/ego2robot.pdf
+- 图片 -> 99_Attachments/papers/images/ego2robot/
 - 索引已更新：05_Papers/index.md
 ```

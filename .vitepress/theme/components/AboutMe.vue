@@ -1,204 +1,195 @@
-<!-- 关于我：双语个人信息 + 联系方式 + 栏目导览，全玻璃拟态卡片 -->
+<!-- 首页个人简介 -->
 <template>
-  <div class="about">
-    <!-- 个人简介卡 -->
-    <section class="about-hero glass">
+  <section class="about">
+    <div class="about-hero">
       <div class="about-hero__avatar" aria-hidden="true">LF</div>
-      <h1 class="about-hero__name">LiFenrir</h1>
-      <p class="about-hero__role">
-        具身智能从业者 · 终身学习者<br />
-        <span class="en">Embodied AI Practitioner · Lifelong Learner</span>
-      </p>
-      <p class="about-hero__bio">
-        你好，我是 LiFenrir，一名具身智能（Embodied AI）从业者，主要关注 VLA
-        模型、世界模型与机器人学习，仍在不断学习 ing。这个站点是我的第二大脑，用来沉淀论文精读、
-        项目复盘与技术杂记，记录从理论到落地的每一步。
-      </p>
-      <p class="about-hero__bio en">
-        Hi, I'm LiFenrir, an Embodied AI practitioner focusing on VLA models, world
-        models, and robot learning — still learning every day. This site is my second
-        brain, where I distill paper notes, project retrospectives, and tech memos.
-      </p>
-      <div class="about-hero__contacts">
-        <a class="contact-chip" href="https://github.com/LiFenrir" target="_blank" rel="noopener">
-          <span class="contact-chip__icon">⌥</span> GitHub · LiFenrir
-        </a>
-        <a class="contact-chip" href="mailto:jianbin3428@gmail.com">
-          <span class="contact-chip__icon">✉</span> jianbin3428@gmail.com
-        </a>
-      </div>
-    </section>
+      <div class="about-hero__main">
+        <h1 class="about-hero__name">Lifenrir个人主页</h1>
 
-    <!-- 栏目导览 -->
-    <h2 class="about-section-title">站内栏目 <span class="en">/ What's inside</span></h2>
-    <div class="about-grid">
-      <a v-for="col in columns" :key="col.title" class="glass column-card" :href="withBase(col.link)">
-        <div class="column-card__icon">{{ col.icon }}</div>
-        <h3 class="column-card__title">{{ col.title }}</h3>
-        <p class="column-card__desc">{{ col.desc }}</p>
-        <p class="column-card__desc en">{{ col.descEn }}</p>
-      </a>
+        <div class="about-hero__contacts">
+          <a class="about-contact" href="https://github.com/LiFenrir" target="_blank" rel="noopener">
+            <svg class="about-contact__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.2.69-3.89-1.54-3.89-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.82 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.69.42.36.79 1.08.79 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.67.8.56C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-11.5-11.5z"/>
+            </svg>
+            <span class="about-contact__label">GitHub</span>
+            <span class="about-contact__value">LiFenrir</span>
+          </a>
+          <a class="about-contact" href="mailto:jianbin3428@gmail.com">
+            <svg class="about-contact__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M1.75 4.5h20.5c.42 0 .75.33.75.75v13.5c0 .42-.33.75-.75.75H1.75a.75.75 0 0 1-.75-.75V5.25c0-.42.33-.75.75-.75Zm.75 1.5v.7l9.5 5.94 9.5-5.94v-.7H2.5Zm0 2.45v9.05h19V8.45l-9.23 5.77a.75.75 0 0 1-.54.14.75.75 0 0 1-.54-.14L2.5 8.45Z"/>
+            </svg>
+            <span class="about-contact__label">邮箱</span>
+            <span class="about-contact__value">jianbin3428@gmail.com</span>
+          </a>
+        </div>
+
+        <p class="about-hero__role">
+          具身智能从业者 · 关注 VLA、世界模型与机器人学习
+        </p>
+
+        <p class="about-hero__bio">
+          这里是 LiFenrir 的个人站点，用来整理和展示日常沉淀的内容：
+        </p>
+
+        <ul class="about-hero__sections">
+          <li>
+            <strong>论文笔记</strong> —— VLA、世界模型、机器人学习等方向的精读与批注。
+          </li>
+          <li>
+            <strong>我的项目</strong> —— VLA 训练、机器人部署与相关工程的实战复盘。
+          </li>
+          <li>
+            <strong>AI 之旅</strong> —— 工具链、自动化工作流与 AI 使用经验的随手记。
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { withBase } from 'vitepress'
-
-const columns = [
-  {
-    icon: '📄',
-    title: '论文笔记',
-    desc: 'VLA、世界模型、强化学习方向的精读与批注，按标准 Wiki 方式组织',
-    descEn: 'Paper notes on VLA, world models, and RL — classic wiki style.',
-    link: '/05_Papers/',
-  },
-  {
-    icon: '🛠',
-    title: '我的项目',
-    desc: 'VLA 训练、在线 RL、机器人部署等实战项目的经验复盘',
-    descEn: 'Retrospectives on VLA training, online RL, and robot deployment.',
-    link: '/projects',
-  },
-  {
-    icon: '🤖',
-    title: 'AI 杂记',
-    desc: '工具链、自动化工作流，以及学习过程中的随手记录',
-    descEn: 'Tooling, automation workflows, and memos along the way.',
-    link: '/ai',
-  },
-]
+// 纯展示组件
 </script>
 
 <style scoped>
 .about {
-  max-width: 880px;
+  max-width: 1080px;
   margin: 0 auto;
-  padding: 48px 24px 96px;
-}
-
-/* 玻璃拟态通用卡：半透明 + 背景模糊 + 圆角矩形 */
-.glass {
-  background: var(--apple-glass-bg);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--apple-glass-border);
-  border-radius: var(--apple-radius-l);
-  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.08);
+  padding: 72px 24px 8px;
 }
 
 .about-hero {
-  padding: 48px 40px;
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
 }
+
 .about-hero__avatar {
-  width: 88px;
-  height: 88px;
-  margin: 0 auto 20px;
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, var(--apple-accent), #5e5ce6);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+  background: linear-gradient(135deg, var(--apple-accent), #7dd3fc);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.22);
 }
+
+.about-hero__main {
+  flex: 1;
+  min-width: 0;
+}
+
 .about-hero__name {
-  margin: 0 0 8px;
-  font-size: 34px;
+  margin: 0 0 14px;
+  font-size: clamp(28px, 5vw, 42px);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   border: none;
 }
-.about-hero__role {
-  margin: 0 0 24px;
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--apple-accent);
-}
-.about-hero__bio {
-  max-width: 620px;
-  margin: 0 auto 14px;
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--vp-c-text-1);
-}
-.en {
-  color: var(--apple-text-secondary);
-  font-size: 0.92em;
-}
+
 .about-hero__contacts {
-  margin-top: 28px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
+  margin-bottom: 18px;
 }
-.contact-chip {
+
+.about-contact {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 980px;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  color: var(--vp-c-text-1);
-  background: var(--apple-glass-bg);
-  border: 1px solid var(--apple-glass-border);
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s, color 0.25s;
-}
-.contact-chip:hover {
-  transform: translateY(-2px);
-  color: var(--apple-accent);
-  border-color: var(--apple-accent);
-}
-.contact-chip__icon {
-  color: var(--apple-accent);
-}
-
-.about-section-title {
-  margin: 56px 0 20px;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  border: none;
-  text-align: center;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-.column-card {
-  display: block;
-  padding: 28px 24px;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s;
-}
-.column-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(14, 165, 233, 0.18);
-}
-.column-card__icon {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-.column-card__title {
-  margin: 0 0 8px;
-  font-size: 17px;
-  font-weight: 600;
-  border: none;
-  padding: 0;
-}
-.column-card__desc {
-  margin: 0 0 6px;
-  font-size: 13.5px;
-  line-height: 1.65;
   color: var(--vp-c-text-2);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  backdrop-filter: blur(12px);
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.about-contact:hover {
+  color: var(--apple-accent);
+  border-color: rgba(14, 165, 233, 0.35);
+  background: rgba(255, 255, 255, 0.65);
+}
+.dark .about-contact {
+  background: rgba(14, 165, 233, 0.1);
+  border-color: rgba(56, 189, 248, 0.18);
+}
+.dark .about-contact:hover {
+  background: rgba(14, 165, 233, 0.18);
+}
+
+.about-contact__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.about-contact__label {
+  color: var(--apple-text-secondary);
+  font-size: 13px;
+}
+
+.about-contact__value {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+.about-hero__role {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--apple-accent);
+}
+
+.about-hero__bio {
+  max-width: 760px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--vp-c-text-2);
+}
+
+.about-hero__sections {
+  max-width: 760px;
+  margin: 0;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--vp-c-text-2);
+}
+.about-hero__sections li {
+  margin-bottom: 6px;
+}
+.about-hero__sections strong {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 48px 16px 8px;
+  }
+  .about-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+  .about-hero__contacts {
+    justify-content: center;
+  }
+  .about-hero__bio,
+  .about-hero__sections {
+    text-align: left;
+  }
 }
 </style>

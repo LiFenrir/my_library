@@ -46,11 +46,16 @@ Outer-Loop Guidance 是一种分层控制设计：VLA 只负责生成**短周期
 
 ## Related Concepts
 
-- [[Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 外环动作分支与低速语义分支的调度
-- [[Edge-VLA-Inference|Edge VLA Inference]] — 边缘 VLA 的延迟约束决定了外环可行的更新频率
-- [[Aerial-VLA|Aerial VLA]] — 无人机等 aerial 平台对内外环分离的典型需求
+- [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 外环动作分支与低速语义分支的调度
+- [[04_Embodied-AI/VLA/Edge-VLA-Inference|Edge VLA Inference]] — 边缘 VLA 的延迟约束决定了外环可行的更新频率
+- [[04_Embodied-AI/VLA/Aerial-VLA|Aerial VLA]] — 无人机等 aerial 平台对内外环分离的典型需求
 - [[03_Robotics/Control/index|Control]] — 控制理论与底层控制器
+
+## Related Entries
+
+- 主归属：[[03_Robotics/Control/index|Control]]
+- 在 VLA 中的角色：[[04_Embodied-AI/VLA/index|VLA]]
 
 ## Papers
 
-- [[05_Papers/articles/litevla-h|LiteVLA-H]] — 本笔记主要知识来源
+- [[05_Papers/notes/litevla-h|LiteVLA-H]] — 本笔记主要知识来源

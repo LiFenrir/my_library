@@ -1,4 +1,4 @@
-// markdown-it 插件：将 Obsidian [[wikilink]] 转为站内链接，未命中渲染为灰色纯文本
+// markdown-it 插件：将 Obsidian [[wikilink]] 转为站内链接/图片，未命中渲染为灰色纯文本
 import fs from 'node:fs'
 import path from 'node:path'
 import type MarkdownIt from 'markdown-it'
@@ -7,6 +7,9 @@ const ROOT = process.cwd()
 
 // 参与路由解析的内容目录（与 config 的 srcExclude 互补）
 const CONTENT_DIRS = ['02_AI', '03_Robotics', '04_Embodied-AI', '05_Papers/notes', '06_Projects/own']
+
+// 图片扩展名
+const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.bmp'])
 
 // basename（不含扩展名）→ 站点路由；目录名 → 其 index 路由
 function buildRouteMap(): Map<string, string> {
@@ -29,7 +32,16 @@ function buildRouteMap(): Map<string, string> {
   return map
 }
 
-export function wikilinkPlugin(md: MarkdownIt) {
+// 将 Obsidian 图片路径转为站点可访问的公开路径
+function imageUrl(target: string, base: string): string {
+  // target 形如 99_Attachments/papers/images/<slug>/xxx.jpg
+  // 保持原仓库路径，最终 URL 加上 base
+  const normalized = target.replace(/^\/+/, '')
+  const prefix = base.replace(/\/$/, '')
+  return `${prefix}/${normalized}`
+}
+
+export function wikilinkPlugin(md: MarkdownIt, base = '/my_library/') {
   const routes = buildRouteMap()
 
   md.core.ruler.push('wikilink', (state) => {
@@ -41,8 +53,8 @@ export function wikilinkPlugin(md: MarkdownIt) {
           newChildren.push(child)
           continue
         }
-        // 拆分文本中的 [[target|label]] / [[target]]
-        const re = /\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g
+        // 拆分文本中的 [[target|label]] / [[target]] / ![[image]]
+        const re = /!?\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g
         let last = 0
         let m: RegExpExecArray | null
         while ((m = re.exec(child.content))) {
@@ -51,15 +63,26 @@ export function wikilinkPlugin(md: MarkdownIt) {
             t.content = child.content.slice(last, m.index)
             newChildren.push(t)
           }
+          const isImage = m[0].startsWith('!')
           const target = m[1].trim()
-          const label = (m[2] ?? m[1]).trim()
+          const label = (m[2] ?? '').trim() || path.basename(target, path.extname(target))
+          const ext = path.extname(target).toLowerCase()
           const basename = target.split('/').pop()!.replace(/\/$/, '') || target
-          const route = routes.get(basename) ?? routes.get(target.replace(/\/$/, ''))
-          const html = new state.Token('html_inline', '', 0)
-          html.content = route
-            ? `<a href="${md.utils.escapeHtml(route)}" class="wikilink">${md.utils.escapeHtml(label)}</a>`
-            : `<span class="wikilink-missing">${md.utils.escapeHtml(label)}</span>`
-          newChildren.push(html)
+
+          if (isImage && IMAGE_EXTS.has(ext)) {
+            // 直接输出 <img>：core 阶段不会再解析 markdown 语法，text token 会变成纯文本
+            const html = new state.Token('html_inline', '', 0)
+            const src = md.utils.escapeHtml(imageUrl(target, base))
+            html.content = `<img src="${src}" alt="${md.utils.escapeHtml(label)}" loading="lazy">`
+            newChildren.push(html)
+          } else {
+            const route = routes.get(basename) ?? routes.get(target.replace(/\/$/, ''))
+            const html = new state.Token('html_inline', '', 0)
+            html.content = route
+              ? `<a href="${md.utils.escapeHtml(route)}" class="wikilink">${md.utils.escapeHtml(label || basename)}</a>`
+              : `<span class="wikilink-missing">${md.utils.escapeHtml(label || target)}</span>`
+            newChildren.push(html)
+          }
           last = m.index + m[0].length
         }
         if (last < child.content.length) {

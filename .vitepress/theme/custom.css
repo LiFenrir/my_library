@@ -1,9 +1,3 @@
-/**
- * 苹果风主题：CSS 变量双主题 + 覆盖 VitePress 变量族
- * 设计参照 apple.com：系统字体、大留白、精致圆角、毛玻璃、克制的色彩
- */
-
-/* ========== 主题变量 ========== */
 :root {
   /* 天蓝色系（苹果 systemCyan/Sky） */
   --apple-accent: #0ea5e9;
@@ -15,9 +9,9 @@
   --apple-border: #d2d2d7;
   --apple-code-bg: #f0f6fa;
   --apple-nav-bg: rgba(245, 249, 252, 0.72);
-  /* 玻璃拟态：天蓝调半透明 + 同色细边 */
-  --apple-glass-bg: rgba(14, 165, 233, 0.07);
-  --apple-glass-border: rgba(14, 165, 233, 0.22);
+/* 玻璃拟态：更浅的天蓝调半透明 + 同色细边 */
+  --apple-glass-bg: rgba(14, 165, 233, 0.04);
+  --apple-glass-border: rgba(14, 165, 233, 0.14);
 
   /* 映射到 VitePress 变量族 */
   --vp-c-brand-1: var(--apple-accent);
@@ -30,6 +24,7 @@
   --vp-c-text-2: var(--apple-text-secondary);
   --vp-c-divider: rgba(0, 0, 0, 0.08);
   --vp-c-gutter: var(--vp-c-divider);
+  --vp-sidebar-bg-color: transparent;
 
   /* 字体：苹果系统字体栈 */
   --vp-font-family-base:
@@ -42,6 +37,24 @@
   --apple-radius-s: 10px;
   --apple-radius-m: 14px;
   --apple-radius-l: 18px;
+
+  /* 月光笔记模板变量 */
+  --ml-grad-1: #7dd3fc;
+  --ml-grad-2: #38bdf8;
+  --ml-grad-3: #818cf8;
+  --ml-grad-4: #bae6fd;
+  --ml-glass-bg: rgba(255, 255, 255, 0.55);
+  --ml-glass-blur: blur(18px) saturate(160%);
+  --ml-glass-border: rgba(255, 255, 255, 0.65);
+  --ml-glass-shadow: 0 8px 32px rgba(14, 116, 180, 0.10),
+                     inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --ml-sky-gradient: linear-gradient(
+    135deg,
+    #7dd3fc 0%,
+    #38bdf8 30%,
+    #818cf8 62%,
+    #bae6fd 100%
+  );
 
   color-scheme: light;
 }
@@ -57,13 +70,19 @@
   --apple-border: #2a3a4a;
   --apple-code-bg: #0d1520;
   --apple-nav-bg: rgba(6, 11, 18, 0.72);
-  --apple-glass-bg: rgba(56, 189, 248, 0.1);
-  --apple-glass-border: rgba(56, 189, 248, 0.3);
+  --apple-glass-bg: rgba(56, 189, 248, 0.07);
+  --apple-glass-border: rgba(56, 189, 248, 0.22);
 
   --vp-c-bg: var(--apple-bg);
   --vp-c-bg-alt: #0b1320;
   --vp-c-bg-elv: var(--apple-card-bg);
   --vp-c-divider: rgba(125, 211, 252, 0.14);
+  --vp-sidebar-bg-color: transparent;
+
+  --ml-glass-bg: rgba(16, 32, 52, 0.55);
+  --ml-glass-border: rgba(125, 211, 252, 0.14);
+  --ml-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35),
+                     inset 0 1px 0 rgba(125, 211, 252, 0.12);
 
   color-scheme: dark;
 }
@@ -71,20 +90,6 @@
 /* ========== 全局排版 ========== */
 html {
   scroll-behavior: smooth;
-}
-
-/* 页面顶部淡天蓝渐变底，衬托玻璃卡的天蓝半透明 */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 480px;
-  background: radial-gradient(60% 100% at 50% 0%, rgba(14, 165, 233, 0.1), transparent 70%);
-  pointer-events: none;
-  z-index: -1;
-}
-.dark body::before {
-  background: radial-gradient(60% 100% at 50% 0%, rgba(56, 189, 248, 0.14), transparent 70%);
 }
 
 body {
@@ -122,16 +127,123 @@ body {
   margin-top: 2.2em;
 }
 
-/* ========== 毛玻璃导航栏 ========== */
-.VPNavBar {
-  background: var(--apple-nav-bg);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--vp-c-divider);
+/* ========== 全站动态天空背景 ========== */
+.ml-sky-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
 }
-/* 顶栏未滚动时隐藏分割线，滚动后由 VitePress 自带 .has-sidebar/.top 状态自然过渡 */
-.VPNavBar:not(.has-sidebar) .container {
-  max-width: 1152px;
+.ml-sky-backdrop .sky-base {
+  position: absolute;
+  inset: 0;
+  background: var(--ml-sky-gradient);
+  background-size: 320% 320%;
+  animation: mlSkyDrift 26s ease-in-out infinite;
+  opacity: 0.16;
+}
+.dark .ml-sky-backdrop .sky-base { opacity: 0.22; }
+
+.ml-sky-backdrop .sky-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  will-change: transform;
+}
+.ml-sky-backdrop .orb-1 {
+  width: 46vw; height: 46vw;
+  top: -14vw; right: -8vw;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.55), transparent 68%);
+  animation: mlOrbFloat1 19s ease-in-out infinite alternate;
+}
+.ml-sky-backdrop .orb-2 {
+  width: 38vw; height: 38vw;
+  bottom: -12vw; left: -9vw;
+  background: radial-gradient(circle, rgba(129, 140, 248, 0.38), transparent 68%);
+  animation: mlOrbFloat2 24s ease-in-out infinite alternate;
+}
+.ml-sky-backdrop .orb-3 {
+  width: 26vw; height: 26vw;
+  top: 38%; left: 55%;
+  background: radial-gradient(circle, rgba(186, 230, 253, 0.5), transparent 68%);
+  animation: mlOrbFloat3 31s ease-in-out infinite alternate;
+}
+
+@keyframes mlSkyDrift {
+  0%, 100% { background-position: 0% 40%; }
+  50%      { background-position: 100% 60%; }
+}
+@keyframes mlOrbFloat1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-7vw, 6vh) scale(1.12); }
+}
+@keyframes mlOrbFloat2 {
+  from { transform: translate(0, 0) scale(1.05); }
+  to   { transform: translate(8vw, -7vh) scale(0.94); }
+}
+@keyframes mlOrbFloat3 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-9vw, -8vh) scale(1.15); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ml-sky-backdrop * { animation: none !important; }
+}
+
+/* ========== 毛玻璃导航栏 ========== */
+.VPNav {
+  --vp-nav-bg-color: transparent;
+}
+.VPNav .VPNavBar {
+  background: var(--ml-glass-bg);
+  -webkit-backdrop-filter: var(--ml-glass-blur);
+  backdrop-filter: var(--ml-glass-blur);
+  border-bottom: 1px solid var(--ml-glass-border);
+  box-shadow: var(--ml-glass-shadow);
+}
+.VPNav .VPNavBar.has-sidebar .content { padding-right: 24px; }
+.VPNavBarTitle .title {
+  background: linear-gradient(120deg, var(--ml-grad-2), var(--ml-grad-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .button-text { color: var(--vp-c-text-2); }
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* 导航栏 logo 图标 */
+.VPNavBarTitle .logo {
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
+}
+
+/* ========== 毛玻璃侧边栏 ========== */
+.VPSidebar {
+  background: var(--apple-glass-bg);
+  -webkit-backdrop-filter: var(--ml-glass-blur);
+  backdrop-filter: var(--ml-glass-blur);
+  border-right: 1px solid var(--apple-glass-border);
+}
+.VPSidebar.open {
+  background: var(--vp-c-bg);
+}
+.VPSidebarItem .text { color: var(--vp-c-text-2); }
+.VPSidebarItem .item.active .text,
+.VPSidebarItem .item:hover .text { color: var(--vp-c-brand-1); }
+.VPSidebarItem.level-0 > .item > .text { font-weight: 600; }
+
+/* ========== 毛玻璃本地搜索 ========== */
+.VPNavBarSearch .DocSearch-Button {
+  background: var(--ml-glass-bg);
+  -webkit-backdrop-filter: var(--ml-glass-blur);
+  backdrop-filter: var(--ml-glass-blur);
+  border: 1px solid var(--ml-glass-border);
+  border-radius: 12px;
 }
 
 /* ========== Hero 区 ========== */
@@ -174,6 +286,109 @@ body {
   transform: scale(1.03);
 }
 
+/* ========== 栏目卡片（ml-card） ========== */
+.ml-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+}
+
+.ml-card {
+  position: relative;
+  display: block;
+  padding: 26px 24px;
+  border-radius: 20px;
+  text-decoration: none !important;
+  background: var(--ml-glass-bg);
+  -webkit-backdrop-filter: var(--ml-glass-blur);
+  backdrop-filter: var(--ml-glass-blur);
+  border: 1px solid var(--ml-glass-border);
+  box-shadow: var(--ml-glass-shadow);
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.28s ease;
+}
+.ml-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(150deg,
+    rgba(125, 211, 252, 0.22) 0%,
+    transparent 45%,
+    rgba(129, 140, 248, 0.16) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.ml-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 18px 48px rgba(14, 116, 180, 0.18),
+              inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.dark .ml-card:hover {
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 rgba(125, 211, 252, 0.16);
+}
+.ml-card:hover::before { opacity: 1; }
+.ml-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 22px;
+  margin-bottom: 14px;
+  background: linear-gradient(140deg, rgba(125, 211, 252, 0.32), rgba(129, 140, 248, 0.22));
+  border: 1px solid var(--ml-glass-border);
+}
+.ml-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0 0 8px;
+}
+.ml-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+.ml-card-meta {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}
+.ml-card-arrow {
+  position: absolute;
+  top: 24px;
+  right: 22px;
+  color: var(--vp-c-brand-2);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.ml-card:hover .ml-card-arrow { opacity: 1; transform: translateX(0); }
+
+/* 首页卡片布局：论文独占首行 */
+.ml-cards-featured {
+  grid-template-columns: 1fr;
+}
+.ml-cards-secondary {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 640px) {
+  .ml-cards-secondary {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========== 首页 features 卡片（若使用） ========== */
 .VPFeature {
   border-radius: var(--apple-radius-l);
@@ -183,17 +398,6 @@ body {
 }
 .VPFeature:hover {
   transform: translateY(-4px);
-}
-
-/* ========== 侧边栏 ========== */
-.VPSidebar {
-  background: transparent;
-}
-.VPSidebarItem .text {
-  font-size: 14px;
-}
-.VPSidebarItem .item .link:hover {
-  color: var(--apple-accent);
 }
 
 /* ========== 代码块：苹果开发者文档风 ========== */
@@ -254,18 +458,50 @@ body {
   display: table;
 }
 
-/* ========== 非论文文档：玻璃拟态内容卡（论文笔记保持标准 wiki 阅读） ========== */
-.glass-doc .VPDoc .content-container {
-  background: var(--apple-glass-bg);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid var(--vp-c-divider);
-  border-radius: var(--apple-radius-l);
-  padding: 32px 40px;
-  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.08);
+/* 论文笔记 wiki 页面：让侧边栏与主内容视觉连续 */
+.VPDoc:not(.has-sidebar) .content {
+  max-width: none;
 }
+.VPDoc .content {
+  max-width: 100%;
+  padding: 32px 24px;
+}
+.VPDoc .content-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* 详情页主内容区也使用浅玻璃底，与侧边栏统一 */
+.VPDoc .content-body {
+  background: rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid var(--apple-glass-border);
+  border-radius: var(--apple-radius-l);
+  padding: 32px 36px;
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.05);
+}
+.dark .VPDoc .content-body {
+  background: rgba(14, 165, 233, 0.06);
+}
+
+@media (min-width: 960px) {
+  .VPDoc .content {
+    padding: 48px 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .VPDoc .content {
+    padding: 48px 48px;
+  }
+  .VPDoc .content-container {
+    max-width: 1100px;
+  }
+}
+
 @media (max-width: 768px) {
-  .glass-doc .VPDoc .content-container {
+  .VPDoc .content-body {
     padding: 20px;
   }
 }
@@ -323,6 +559,9 @@ body {
 .VPFooter {
   border-top: 1px solid var(--vp-c-divider);
   color: var(--apple-text-secondary);
+  background: var(--ml-glass-bg);
+  -webkit-backdrop-filter: var(--ml-glass-blur);
+  backdrop-filter: var(--ml-glass-blur);
 }
 
 /* ========== 论文首页 ========== */
@@ -330,3 +569,12 @@ body {
 .obsidian-links {
   display: none;
 }
+
+/* ========== 自定义滚动条 ========== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(56, 189, 248, 0.55); }
+::-webkit-scrollbar-track { background: transparent; }

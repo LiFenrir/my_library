@@ -41,7 +41,7 @@ Cross-embodiment Generalization 是指机器人策略**在训练时未见过的�
 
 ## Related Concepts
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 具备跨 embodiment 泛化潜力的模型
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 具备跨 embodiment 泛化潜力的模型
 - [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 通过视觉目标帮助跨形态迁移
 - [[04_Embodied-AI/VLA/Compositional-Task-Generalization|Compositional Task Generalization]] — 另一种 VLA 高级泛化能力
 

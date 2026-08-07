@@ -1,17 +1,17 @@
 ---
 title: "VLA"
-description: "视觉-语言-动作模型（Vision-Language-Action Model）相关概念与方法索引"
+description: "视觉-语言-动作模型（Vision-Language-Action）相关概念与方法索引"
 tags: [moc, embodied-ai, vla]
 created: 2026-07-31
 ---
 
 # VLA
 
-本目录收集视觉-语言-动作模型（Vision-Language-Action Model, VLA）相关概念，涵盖架构、训练、推理与部署。
+本目录收集视觉-语言-动作模型（Vision-Language-Action, VLA）相关概念，涵盖架构、训练、推理与部署。
 
 ## 核心概念
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — VLA 通用定义与典型架构
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — VLA 通用定义与典型架构
 - [[04_Embodied-AI/VLA/VLA-Architecture|VLA Architecture]] — 架构设计
 - [[04_Embodied-AI/VLA/Action-Chunking|Action Chunking]] — 动作块输出
 - [[04_Embodied-AI/VLA/Action-Expert|Action Expert]] — 动作专家模块
@@ -22,10 +22,11 @@ created: 2026-07-31
 
 - [[04_Embodied-AI/VLA/Coaching-for-VLAs|Coaching for VLAs]] — VLA 的 coaching 微调
 - [[04_Embodied-AI/VLA/Diverse-Prompting-for-VLA|Diverse Prompting for VLA]] — 多样化提示
-- [[04_Embodied-AI/VLA/Episode-Metadata-Conditioning|Episode Metadata Conditioning]] — Episode 元条件
+- [[04_Embodied-AI/VLA/Episode-Metadata-Prompting|Episode Metadata Prompting]] — Episode 元数据条件
 - [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 子目标图像条件
 - [[04_Embodied-AI/VLA/Compositional-Task-Generalization|Compositional Task Generalization]] — 组合任务泛化
 - [[04_Embodied-AI/VLA/Cross-embodiment-Generalization|Cross-embodiment Generalization]] — 跨形态泛化
+- [[04_Embodied-AI/Data-and-Evaluation/Ego-to-Robot-Synthesis|Ego-to-Robot Synthesis]] — 从人体视频合成机器人训练数据
 
 ## 推理与部署
 
@@ -34,6 +35,7 @@ created: 2026-07-31
 - [[04_Embodied-AI/VLA/Dual-Rate-VLA-Scheduling|Dual-Rate VLA Scheduling]] — 双速率调度
 - [[04_Embodied-AI/VLA/Real-time-Action-Chunking|Real-time Action Chunking]] — 实时动作块
 - [[04_Embodied-AI/VLA/VLA-ROS2-Integration|VLA ROS2 Integration]] — ROS2 集成
+- [[02_AI/AI-Infra/VLA-Inference|VLA Inference]] — VLA 推理延迟与调度入口
 
 ## 代表模型
 
@@ -44,8 +46,10 @@ created: 2026-07-31
 ## 评估
 
 - [[04_Embodied-AI/VLA/real-robot-vla-evaluation|Real-Robot VLA Evaluation]] — 真实机器人评估
+- [[03_Robotics/Simulation/Disentangled-Robot-Generalization-Benchmark|Disentangled Generalization Benchmark]] — 解耦泛化评估
 
 ## 相关入口
 
 - [[04_Embodied-AI/index|04_Embodied-AI]] — 具身智能
 - [[02_AI/LLM/index|LLM]] — 大语言模型基础
+- [[05_Papers/index|05_Papers]] — 论文精读

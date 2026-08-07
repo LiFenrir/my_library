@@ -47,7 +47,7 @@ $$
 
 ## Related Concepts
 
-- [[02_AI/Flow-Matching|Flow Matching]] — Noisy History Augmentation 的噪声插值基础
+- [[02_AI/Generative-Models/Flow-Matching|Flow Matching]] — Noisy History Augmentation 的噪声插值基础
 - [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 在自回归视频-动作世界模型中应用此技巧
 - [[04_Embodied-AI/World-Model/Asynchronous-Inference-for-Robot-Control|Asynchronous Inference for Robot Control]] — 常与部分去噪配合实现实时控制
 - [[04_Embodied-AI/VLA/Action-Chunking|Action Chunking]] — 同样用于降低单位时间推理开销

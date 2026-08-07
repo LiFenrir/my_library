@@ -29,9 +29,9 @@ created: 2026-07-30
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/Robot-RL/long-horizon-manipulation|Long-Horizon Manipulation]] — 分层规划常应用于此
-- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 用子目标图像引导分层执行
-- [[04_Embodied-AI/World-Model/Hierarchical-JEPA|Hierarchical JEPA]] — LeCun 提出的分层预测架构
+- [[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]]|Long-Horizon Manipulatio[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 分层规划常应用于此
+- [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditionin[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 用子目标图像引导分层执行
+- [[04_Embodied-AI/World-Model/Hierarchical-JEPA|Hierarchical JEP[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — LeCun 提出的分层预测架构
 
 ## 来源
 

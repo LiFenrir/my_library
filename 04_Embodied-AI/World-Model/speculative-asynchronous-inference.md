@@ -43,10 +43,10 @@ DexWorldModel 报告 SAI 可降低约 **50%** 的阻塞延迟。
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/World-Model/causal-latent-world-model|Causal Latent World Model]] — DexWorldModel 的具体实现
-- [[04_Embodied-AI/World-Model/world-action-model|World Action Model]] — SAI 面向的模型范式
-- [[04_Embodied-AI/World-Model/Asynchronous-Inference-for-Robot-Control|Asynchronous Inference for Robot Control]] — 同一大方向下的另一种异步方案
+- [[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]|Causal Latent World Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — DexWorldModel 的具体实现
+- [[04_Embodied-AI/World-Model/world-action-model|World Action Mode[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — SAI 面向的模型范式
+- [[04_Embodied-AI/World-Model/Asynchronous-Inference-for-Robot-Control|Asynchronous Inference for Robot Contro[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]] — 同一大方向下的另一种异步方案
 
 ## 来源
 
-- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Tasks]]
+- [[05_Papers/articles/dexworldmodel|DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Task[[04_Embodied-AI/World-Model/causal-world-model|Causal World Model]]

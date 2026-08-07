@@ -64,8 +64,8 @@ H-JEPA 通过预测学习抽象概念：
 - [[Joint-Embedding-Predictive-Architecture|JEPA]] — H-JEPA 的基础单元。
 - [[World-Model]] — H-JEPA 是 LeCun 世界模型的实现形式。
 - [[Model-Predictive-Control|MPC]] — H-JEPA 支持分层 MPC。
-- [[Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — H-JEPA 是该架构中的世界模型核心。
+- [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|[[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]] — H-JEPA 是该架构中的世界模型核心。
 
 ## 来源
 
-- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards Autonomous Machine Intelligence]]，LeCun，2022
+- [[05_Papers/articles/path-towards-autonomous-machine-intelligence|A Path Towards [[02_AI/Cognitive-Architecture/Autonomous-Machine-Intelligence|Autonomous Machine Intelligence]]，LeCun，2022

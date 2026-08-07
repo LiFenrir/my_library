@@ -32,10 +32,10 @@ created: 2026-07-29
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/Robot-RL/Advantage-Reward-Modeling|Advantage Reward Modeling]] — 使用三态标签作为训练信号
-- [[04_Embodied-AI/Robot-RL/long-horizon-manipulation|Long-Horizon Manipulation]] — 典型应用场景
-- [[04_Embodied-AI/Robot-RL/Reward-Engineering-Bottleneck|Reward Engineering Bottleneck]] — 本方法试图解决的问题
+- [[04_Embodied-AI/Robot-RL/Advantage-Reward-Modeling|Advantage Reward Modelin[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 使用三态标签作为训练信号
+- [[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]]|Long-Horizon Manipulatio[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 典型应用场景
+- [[04_Embodied-AI/Robot-RL/Reward-Engineering-Bottleneck|Reward Engineering Bottlenec[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]] — 本方法试图解决的问题
 
 ## 来源
 
-- [[05_Papers/articles/arm|ARM: Advantage Reward Modeling for Long-Horizon Manipulation]]，第 3.2.2 节
+- [[05_Papers/articles/arm|ARM: Advantage Reward Modeling for Long-Horizon Manipulatio[[04_Embodied-AI/Robot-RL/Long-Horizon-Manipulation-Reward|Long-Horizon Manipulation Reward]]，第 3.2.2 节

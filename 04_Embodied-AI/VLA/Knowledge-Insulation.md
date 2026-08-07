@@ -11,7 +11,7 @@ created: 2026-07-28
 
 # Knowledge Insulation
 
-VLA 训练方法，让模型同时学习离散 token（子任务文本、离散化动作 token）和连续动作（通过 [[Flow-Matching]]），并通过 stop gradient 防止动作专家反向传播影响 VLM 表示。
+VLA 训练方法，让模型同时学习离散 token（子任务文本、离散化动作 token）和连续动作（通过 [[02_AI/Generative-Models/Flow-Matching]]），并通过 stop gradient 防止动作专家反向传播影响 VLM 表示。
 
 ## Core Idea
 
@@ -46,8 +46,8 @@ $$
 
 ## Related Concepts
 
-- [[Vision-Language-Action-Model]] — KI 应用的对象
-- [[Flow-Matching]] — 动作专家使用的连续动作生成方法
+- [[[[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]] — KI 应用的对象
+- [[02_AI/Generative-Models/Flow-Matching]] — 动作专家使用的连续动作生成方法
 - [[RECAP]] — 在 KI 架构上增加优势条件进行 RL 训练
 - [[Action-Tokenization|Action Tokenization]] / FAST — VLM backbone 的离散监督来源之一
 

@@ -26,7 +26,7 @@ created: 2026-07-31
 - [[02_AI/VLM/Vision-Language-Model|Vision-Language Model]] — CLIP 是典型的 VLM
 - [[02_AI/VLM/segment-anything-model|Segment Anything Model]] — 常与 CLIP 组合做开放词汇分割
 - [[02_AI/VLM/BLIP|BLIP]] — 另一种视觉-语言预训练框架
-- [[02_AI/foundation-model|Foundation Model]] — CLIP 是 CV/VLM 基础模型之一
+- [[02_AI/General/Foundation-Model|Foundation Model]] — CLIP 是 CV/VLM 基础模型之一
 
 ## 来源
 

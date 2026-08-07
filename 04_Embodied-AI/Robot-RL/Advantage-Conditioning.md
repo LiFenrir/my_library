@@ -50,7 +50,7 @@ $$
 
 ## Test-Time Sharpening
 
-训练时随机 dropout $I_t$，使模型同时掌握条件与非条件分布。推理时可用 [[Classifier-Free-Guidance]] 组合两者，调节 $\beta$ 控制改进强度。
+训练时随机 dropout $I_t$，使模型同时掌握条件与非条件分布。推理时可用 [[02_AI/Generative-Models/Classifier-Free-Guidance]] 组合两者，调节 $\beta$ 控制改进强度。
 
 ## 在 RISE 中的应用
 
@@ -74,7 +74,7 @@ RISE 通过 Policy Warm-up 将 Advantage Conditioning 注入 π0.5 VLA：
 - [[RECAP]] — 将优势条件用于 VLA 迭代训练的方法
 - [[Policy-Extraction]] — 优势条件是一种策略提取方法
 - [[Advantage-Estimation]] — 优势条件的输入
-- [[Classifier-Free-Guidance]] — 推理时增强条件信号
+- [[02_AI/Generative-Models/Classifier-Free-Guidance]] — 推理时增强条件信号
 - [[Regularized-RL]] — 优势条件的理论基础
 - [[04_Embodied-AI/Robot-RL/policy-warm-up-for-world-model-rl|Policy Warm-up for World Model RL]] — 在 RISE 中注入优势条件
 - [[04_Embodied-AI/World-Model/compositional-world-model|Compositional World Model]] — 提供价值模型和想象 rollout

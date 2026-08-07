@@ -25,7 +25,7 @@ created: 2026-07-30
 
 ## 与其他概念的关系
 
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — OpenVLA 是 VLA 范式的代表实现
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — OpenVLA 是 VLA 范式的代表实现
 - [[04_Embodied-AI/VLA/VLA-Architecture|VLA Architecture]] — OpenVLA 采用的架构方案
 - [[02_AI/LLM/Fine-Tuning|Fine-Tuning]] — OpenVLA 支持下游任务微调
 

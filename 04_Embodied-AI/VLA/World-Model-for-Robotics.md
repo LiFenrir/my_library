@@ -42,7 +42,7 @@ World Model for Robotics 是指能够**预测机器人环境未来状态**的生
 ## Related Concepts
 
 - [[04_Embodied-AI/VLA/Subgoal-Image-Conditioning|Subgoal Image Conditioning]] — 世界模型的主要应用
-- [[04_Embodied-AI/VLA/Vision-Language-Action-Model|Vision-Language-Action Model]] — 使用世界模型输出的策略
+- [[04_Embodied-AI/VLA/Vision-Language-Action|Vision-Language-Action]]|Vision-Language-Action Model]] — 使用世界模型输出的策略
 - [[Mixture-of-Experts]] — 大规模世界模型常用架构
 
 ## Papers
